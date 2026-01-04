@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/style/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>My Career Administration</title>
+  </head>
+  <body>
+    <!-- LOADING SCREEN -->
+    <div id="loading">
+      <div class="circle-container">
+        <svg>
+          <circle class="bg" cx="60" cy="60" r="50" />
+          <circle class="progress" cx="60" cy="60" r="50" />
+        </svg>
+        <div class="percentage" id="percent">0%</div>
+      </div>
+    </div>
+
+    <header class="head">
+      <nav class="head__nav">
+        <div class="head__logo">
+          <a href="../public/images/indra_profile.png" class="head__logo__link">
+            <img
+              class="head__logo__icon"
+              src="../public/images/indra_profile.png"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <div class="head__menu">
+          <ul class="head__menu__list animation">
+            <li class="head__menu__item">
+              <a
+                data-lang="nav-home"
+                href="#home"
+                class="head__menu__link hover"
+                id="bold"
+                >HOME</a
+              >
+            </li>
+            <li class="head__menu__item">
+              <a
+                data-lang="nav-workExperience"
+                href="#workExperience"
+                class="head__menu__link hover"
+                >WORK EXPERIENCE</a
+              >
+            </li>
+            <li class="head__menu__item">
+              <a
+                data-lang="nav-skills"
+                href="#skills"
+                class="head__menu__link hover"
+                >SKILLS</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="head__btn-group btn-group">
+          <button class="btn translate-btn" id="translateBtn">
+            <img src="../public/images/icon/indonesia.png" alt="" />
+          </button>
+          <button id="modeButton">
+            <i class="fa fa-moon-o"></i>
+          </button>
+          <!-- <span class="mode-label">Dark Mode</span> -->
+        </div>
+        <div class="head__ham-menu">
+          <button id="show-menu" class="head__button">
+            <span class="head__button__bar"></span>
+            <span class="head__button__bar"></span>
+            <span class="head__button__bar"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="home" id="home">
+        <div class="home__hero animation">
+          <div class="home__content">
+            <div class="home__content__title">
+              <h1>
+                INDRAPRASTA
+                <strong>DWINANDA FAHREZA</strong>
+              </h1>
+            </div>
+            <div class="home__content__info">
+              <p data-lang="home-info">
+                A professional in administration and informatics with experience
+                in data management and website development.
+              </p>
+            </div>
+            <div class="home__content__cta">
+              <a data-lang="home-btn" href="">CONTACT ME</a>
+            </div>
+          </div>
+          <div class="home__socials animation">
+            <div class="home__socials__social">
+              <a
+                href="https://www.linkedin.com/in/indra-prasta-b1878a278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                class="home__socials__link"
+              >
+                <i class="fa fa-linkedin-square"></i>
+              </a>
+            </div>
+            <div class="home__socials__social">
+              <a href="https://wa.me/6281234567890" class="home__socials__link">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+            </div>
+            <div class="home__socials__social">
+              <a
+                href="https://www.instagram.com/indraprasta_df?igsh=dm56aTg0OTZzMXEx"
+                class="home__socials__link"
+              >
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+            <div class="home__socials__social">
+              <a
+                href="https://github.com/indraprasta123"
+                class="home__socials__link"
+              >
+                <i class="fa fa-github-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="workExperience" id="workExperience">
+        <div class="workExperience__container">
+          <div class="animations animation">
+            <div class="workExperience__title">
+              <h2 data-lang="workExperience-title">WORK EXPERIENCE</h2>
+              <h3 data-lang="txt-59">
+                Administrative Staff – CV Wibawa Putra Utamajaya (Purworejo |
+                July 11, 2020 – November 16, 2023)
+              </h3>
+              <p data-lang="txt-60">
+                Responsible for managing the company’s operational
+                administration, particularly related to data recording, stock
+                management, and financial reporting.
+              </p>
+              <div class="pdf_btn">
+                <button id="lihatBtn" class="btn">
+                  <i class="fa fa-eye"></i> Experience Letter
+                </button>
+                <!-- Kontainer PDF (tersembunyi awalnya) -->
+                <div id="pdfContainer" class="pdf-container hidden">
+                  <iframe
+                    src="../public/file/CV_Indraprasta.pdf"
+                    frameborder="0"
+                  ></iframe>
+                  <div class="pdf-actions">
+                    <a
+                      data-lang="open-cv"
+                      href="../public/file/CV_Indraprasta.pdf"
+                      target="_blank"
+                      class="btn"
+                      >OPEN</a
+                    >
+                    <a
+                      data-lang="unduh-cv"
+                      href="../public/file/CV_Indraprasta.pdf"
+                      download
+                      class="btn btn-download"
+                      >DWONLOAD</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="workExperience__content animation">
+            <div class="workExperience__content__list">
+              <div class="workExperience__content__item">
+                <i class="fa fa-check-circle"></i>
+                <p data-lang="txt-61">
+                  Created and managed delivery notes for outgoing goods.
+                </p>
+              </div>
+              <div class="workExperience__content__item">
+                <i class="fa fa-database"></i>
+                <p data-lang="txt-62">
+                  Recorded sales transactions and inventory movement using SISKA
+                  (Accounting Information System).
+                </p>
+              </div>
+              <div class="workExperience__content__item">
+                <i class="fa fa-cubes"></i>
+                <p data-lang="txt-63">
+                  Conducted warehouse stock recaps and regular physical stock
+                  checks.
+                </p>
+              </div>
+              <div class="workExperience__content__item">
+                <i class="fa fa-line-chart"></i>
+                <p data-lang="txt-64">
+                  Processed and calculated sales revenue and financial data
+                  using Microsoft Excel.
+                </p>
+              </div>
+              <div class="workExperience__content__item">
+                <i class="fa fa-file-text-o"></i>
+                <p data-lang="txt-65">
+                  Prepared financial reports covering income and expenses from
+                  sales activities.
+                </p>
+              </div>
+              <div class="workExperience__content__item">
+                <i class="fa fa-check-square-o"></i>
+                <p data-lang="txt-66">
+                  Ensured administrative data was accurate, organized, and easy
+                  to access.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skills AdministrationSkills" id="skills">
+        <div class="skills__container">
+          <div class="animation">
+            <div class="skills__title">
+              <h2 data-lang="skilss-title">SKILLS</h2>
+              <p data-lang="txt-67">
+                I have administrative competencies that include data management,
+                documentation, and company operational support.
+              </p>
+            </div>
+          </div>
+          <div class="skills__content animation">
+            <div class="skills__content__item">
+              <img src="../public/images/icon/administration.png" alt="" />
+              <h3 data-lang="administration.">ADMINISTRATION</h3>
+              <p data-lang="txt-68">
+                Archiving and storing documents, administrative management, and
+                recording documents in a neat and structured manner.
+              </p>
+            </div>
+            <div class="skills__content__item">
+              <img src="../public/images/icon/accounting.png" alt="" />
+              <h3 data-lang="accounting.">ACCOUNTING</h3>
+              <p data-lang="txt-69">
+                Archiving and storing documents, administrative management, and
+                recording documents in a neat and structured manner.
+              </p>
+            </div>
+            <div class="skills__content__item">
+              <img src="../public/images/icon/office.png" alt="" />
+              <h3 data-lang="teknikal/software.">TECHNICAL/SOFTWARE</h3>
+              <p data-lang="txt-70">
+                Microsoft Excel (data entry, formulas, recaps), Microsoft Word,
+                SISKA system, as well as computer operation and office
+                applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__content">
+            <div class="footer__left-side">
+              <h3>INDRAPRASTA DWINANDA FAHREZA</h3>
+              <div class="footer__left-side__contact">
+                <div class="footer__left-side__phone">
+                  <i class="fa fa-phone"></i>
+                  <p>+62 857 4052 9930</p>
+                </div>
+                <div class="footer__left-side__email">
+                  <i class="fa fa-envelope"></i>
+                  <p>indraprastadwinanda@gmail.com</p>
+                </div>
+              </div>
+              <p data-lang="txt-46">
+                A Frontend focused Web Developer building the Frontend of
+                Websites and Web Applications that leads to the success of the
+                overall product
+              </p>
+            </div>
+            <div class="footer__right-side">
+              <div class="footer__right-side__address">
+                <i class="fa fa-map-marker"></i>
+                <p data-lang="txt-47">
+                  Address: Pengadegan, South Jakarta City, Special Capital
+                  Region Jakarta
+                </p>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.103649970158!2d106.84591657499064!3d-6.2500711937383455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTUnMDAuMyJTIDEwNsKwNTAnNTQuNiJF!5e0!3m2!1sid!2sid!4v1766757277231!5m2!1sid!2sid"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <div class="footer__copyright">
+            <p data-lang="txt-copyright">
+              © Copyright 2025. Made by Indraprasta Dwinanda Fahreza
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script src="../public/js/administration.js"></script>
+  </body>
+</html>

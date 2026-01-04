@@ -1,0 +1,144 @@
+.contact {
+  position: relative;
+  background-image: var(--bg-images-light);
+  background-size: cover;
+  background-position: center;
+  padding: 60px 40px;
+  &::before {
+    content: "";
+    display: none;
+  }
+  &__title {
+    text-align: center;
+    position: relative;
+    h2 {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transition: all 0.4s ease-out;
+        transition-delay: 0.25s;
+        transform: none;
+      }
+    }
+    p {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transition: all 0.4s ease-out;
+        transition-delay: 0.5s;
+        transform: none;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    &__form {
+      display: flex;
+      background: white;
+      flex-direction: column;
+      gap: 40px;
+      width: 60%;
+      padding: 40px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius: 5px;
+    }
+    &__form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 1s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.3s;
+        transform: none;
+        @for $i from 1 through 12 {
+          $delay: 240 + ($i * 80) + ms;
+          &:nth-child(#{$i}) {
+            transition-delay: $delay;
+          }
+        }
+      }
+    }
+    label {
+      color: var(--text-light);
+    }
+    input,
+    textarea {
+      color: rgb(51, 51, 51);
+      padding: 20px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(235, 235, 235);
+      border-image: initial;
+      background: rgb(240, 240, 240);
+      border-radius: 5px;
+    }
+    textarea {
+      height: 100px;
+    }
+    input::placeholder {
+      letter-spacing: 1px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 20px 0px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+      border: none;
+      background: #6b7280;
+      cursor: not-allowed;
+      transition: 0.25s;
+    }
+    button.active {
+      background: #0069d9;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .contact {
+    &__content {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575.8px) {
+  .contact {
+    position: relative;
+    padding: 60px 20px;
+    &__content {
+      &__form {
+        width: 80%;
+        gap: 20px;
+        padding: 30px;
+      }
+      &__form-field {
+        gap: 10px;
+      }
+      input,
+      textarea {
+        padding: 15px;
+      }
+    }
+  }
+}

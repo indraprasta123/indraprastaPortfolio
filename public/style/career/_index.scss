@@ -1,0 +1,145 @@
+.career {
+  background-image: var(--bg-images-light);
+  background-size: cover;
+  background-position: center;
+  padding: 60px 40px;
+  position: relative;
+  &::before {
+    display: none;
+  }
+  &__title {
+    text-align: center;
+    position: relative;
+    h2 {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transition: all 0.5s ease-out;
+        transition-delay: 0.25s;
+        transform: none;
+      }
+    }
+    p {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transition: all 0.5s ease-out;
+        transition-delay: 0.4s;
+        transform: none;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 80px;
+    position: relative;
+    &__programmer {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      background: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transition: all 0.4s ease-out;
+        transition-delay: 0.5s;
+        transform: none;
+      }
+    }
+    &__administration {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      background: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transition: all 0.5s ease-out;
+        transition-delay: 0.5s;
+        transform: none;
+      }
+    }
+    &__welding-asistant {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      background: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transition: all 0.5s ease-out;
+        transition-delay: 0.6s;
+        transform: none;
+      }
+    }
+    i {
+      color: #0069d9;
+      font-size: 40px;
+    }
+    a {
+      margin-top: 20px;
+      background: #0069d9;
+      padding: 20px 0px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    }
+    a:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+    }
+  }
+}
+
+@media only screen and (max-width: 991.98px) {
+  .career {
+    &__content {
+      flex-direction: column;
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .career {
+    padding: 60px 20px;
+    &__title {
+      p {
+        text-align: center;
+      }
+    }
+    &__content {
+      i {
+        font-size: 30px;
+      }
+      p {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,389 @@
+:root {
+  --bg-images-light: url("../images/bg/bg_common.jpg");
+  --bg-light: #ffffff;
+  --bg-light-secondary: #fafafa;
+  --text-light: #333;
+  --text-secondary-light: #000;
+
+  --bg-images-dark: url("../images/bg/bg-dark.png");
+  --bg-dark: #181e37;
+  --text-dark: #ffffff;
+}
+
+/* ================= DARK MODE ================= */
+body.dark-mode {
+  background: var(--bg-dark) !important;
+  color: var(--text-dark) !important;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* teks umum */
+  p,
+  a,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-dark) !important;
+    transition: 0.1s ease;
+  }
+
+  .home {
+    background-image: var(--bg-images-dark);
+  }
+
+  /* header / navbar */
+  .head__nav {
+    background: var(--bg-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+  }
+  /* link menu */
+  .head__menu__link {
+    color: var(--text-dark) !important;
+    transition: color 0.1s ease;
+
+    &:hover {
+      color: #2eae7e !important; // ungu muda lembut saat hover
+    }
+  }
+
+  .head__button {
+    background-color: var(--bg-dark);
+  }
+
+  /* garis hamburger */
+  .head__button__bar {
+    background: var(--text-dark) !important;
+  }
+
+  /* menu mobile */
+  .close-menu .head__menu {
+    background-color: var(--bg-dark) !important;
+  }
+
+  .close-menu .head__menu__link {
+    color: var(--text-dark) !important;
+  }
+
+  #modeButton {
+    color: var(--text-dark);
+  }
+  #modeButton .home {
+    background-image: var(--bg-images-dark);
+  }
+
+  .home::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(0 0 0 / 76%);
+    inset: 0;
+  }
+
+  .home__content h1 {
+    transition: 0.1s ease;
+  }
+
+  .home__content__info p {
+    transition: 0.1s ease;
+  }
+
+  .home__content__cta a {
+    background: #2eae7e;
+    transition: 0.1s ease;
+    &:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+    }
+  }
+
+  .home__socials {
+    background: var(--bg-dark);
+    border-top: 2px solid rgba(73, 74, 75, 0.3490196078);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.8509803922);
+    i {
+      color: var(--text-dark);
+    }
+  }
+
+  .about__title h2 {
+    transition: 0.1s ease;
+  }
+
+  .about__title p {
+    transition: 0.1s ease;
+  }
+
+  .about__title .btn {
+    background: #2eae7e;
+    transition: 0.1s ease;
+    &:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+    }
+  }
+
+  .about__content__left .animasi strong {
+    color: #2eae7e;
+  }
+
+  .about__content__images img {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+  }
+
+  .about__content__skill p {
+    background: #1e293b;
+  }
+
+  .about__skill-title h3 {
+    transition: 0.1s ease;
+  }
+
+  .about__cta a {
+    background: #2eae7e;
+    &:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+    }
+  }
+
+  .career {
+    background-image: var(--bg-images-dark);
+  }
+
+  .career::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(0 0 0 / 76%);
+    inset: 0;
+  }
+
+  .career__content i {
+    color: #2eae7e;
+  }
+
+  .career__content a {
+    background: #2eae7e;
+    &:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+    }
+  }
+
+  .career__content__programmer {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+    transition: 0.1s ease;
+  }
+
+  .career__content__administration {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+    transition: 0.1s ease;
+  }
+
+  .career__content__welding-asistant {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+    transition: 0.1s ease;
+  }
+
+  .projects__content__right-side a {
+    background: #2eae7e;
+    &:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+    }
+  }
+
+  .projects__content__row {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+  }
+  .projects__content .slick-next {
+    &::before {
+      color: #2eae7e;
+    }
+  }
+
+  .projects__content .slick-prev {
+    &::before {
+      color: #2eae7e;
+    }
+  }
+
+  .projects__content .slick-dots li button {
+    border: 1px solid #2eae7e;
+  }
+
+  .projects__content .slick-dots li.slick-active button {
+    background: #2eae7e;
+  }
+
+  .projects-pageWebDeveloper {
+    background-image: var(--bg-images-dark);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgb(0 0 0 / 76%);
+      inset: 0;
+    }
+  }
+
+  .contact {
+    background-image: var(--bg-images-dark);
+  }
+
+  .contact::before {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(0 0 0 / 76%);
+    inset: 0;
+  }
+
+  .contact__content__form {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+    transition: 0.1s ease;
+  }
+  label {
+    color: var(--text-dark);
+  }
+  button.active {
+    background: #2eae7e;
+    &:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+    }
+  }
+
+  .footer__copyright {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+  }
+
+  .footer__left-side__circle {
+    border: 3px solid white;
+  }
+
+  .footer__left-side__circles {
+    border: 3px solid white;
+  }
+
+  .footer__left-side i {
+    background: #2eae7e;
+  }
+  .footer__right-side iframe {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+  }
+  .footer__right-side i {
+    color: #2eae7e;
+  }
+
+  //page Junior Web Development
+
+  .skills__content__item {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+  }
+  .skills__content .slick-next {
+    &::before {
+      color: #2eae7e;
+    }
+  }
+
+  .skills__content .slick-prev {
+    &::before {
+      color: #2eae7e;
+    }
+  }
+
+  .skills__content .slick-dots li button {
+    border: 1px solid #2eae7e;
+  }
+
+  .skills__content .slick-dots li.slick-active button {
+    background: #2eae7e;
+  }
+
+  //page administration
+  .workExperience__content {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+    &__item {
+      background: var(--bg-dark);
+      &:hover {
+        background: #2eae7e1f;
+      }
+      i {
+        color: #2eae7e;
+      }
+    }
+  }
+
+  .administrationSkill {
+    background-image: var(--bg-images-dark);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgb(0 0 0 / 76%);
+      inset: 0;
+    }
+  }
+
+  .certificates {
+    background-image: var(--bg-images-dark);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgb(0 0 0 / 76%);
+      inset: 0;
+    }
+    &__content {
+      &__card {
+        background: var(--bg-dark);
+        &:hover {
+          background: #2eae7e1f;
+        }
+      }
+      i {
+        color: #2eae7e;
+      }
+    }
+  }
+}
+
+.dark-mode #modeButton i {
+  transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 767.98px) {
+  body.dark-mode {
+    .home {
+      background-image: var(--bg-images-dark);
+    }
+    .about__content__images {
+      background: #1e293b;
+    }
+    .about__content__images img {
+      background: unset;
+      box-shadow: unset;
+    }
+  }
+}

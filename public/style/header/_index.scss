@@ -1,0 +1,476 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo);
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+html {
+  scroll-behavior: smooth;
+}
+.active {
+  opacity: 4;
+  transition: all is ease-out;
+  animation: tes 0.5s linear;
+  transition-delay: 0.5s;
+}
+
+p,
+label,
+a,
+button {
+  font-size: 18px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  line-height: 25px;
+  color: var(--text-light);
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 40px;
+  margin: 0px 0px 40px 0px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-light);
+}
+
+#loading {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loading.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.circle-container {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+
+.circle-container svg {
+  transform: rotate(-85deg);
+  transform: translate(70px, 70px);
+}
+
+circle {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.bg {
+  stroke: #333;
+}
+
+.progress {
+  stroke: #0069d9;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: stroke-dashoffset 0.2s ease;
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Disable scroll while loading */
+body.loading {
+  overflow: hidden;
+}
+
+body.translate-mode {
+  font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.head {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  &__nav {
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .close-menu & {
+      padding: 0;
+    }
+  }
+  &__logo {
+    text-align: center;
+    .close-menu & {
+      display: none;
+    }
+    &__icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  &__menu {
+    .close-menu & {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      background-color: var(--bg-light);
+      align-items: normal;
+    }
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      padding: 0;
+      .close-menu & {
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+        font-size: 2rem;
+        padding: 0 20px;
+      }
+    }
+    &__item {
+      list-style: none;
+      .close-menu & {
+        display: block;
+      }
+    }
+    &__link {
+      color: var(--text-secondary-light);
+      text-decoration: none;
+      font-weight: bold;
+      &:hover {
+        color: #0069d9;
+      }
+      .close-menu & {
+        color: #333;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .translate-btn {
+    display: flex;
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    img {
+      width: 30px;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  #translateBtn:hover {
+    transform: scale(1.1);
+  }
+
+  #translateBtn:active {
+    transform: scale(0.95);
+  }
+
+  /* Animasi rotasi pada ikon */
+  #translateBtn img {
+    transition: transform 0.8s ease;
+  }
+
+  &__btn-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .close-menu & {
+      display: none;
+    }
+  }
+
+  #modeButton {
+    background-color: transparent;
+    color: var(--text-light);
+    border: transparent;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+
+  #modeButton:hover {
+    transform: scale(1.1);
+  }
+
+  #modeButton:active {
+    transform: scale(0.95);
+  }
+
+  /* Animasi rotasi pada ikon */
+  #modeButton i {
+    transition: transform 0.4s ease;
+  }
+
+  &__btn {
+    .close-menu & {
+      display: block;
+    }
+    &__link {
+      display: flex;
+      color: var(--text-light);
+    }
+  }
+  &__button {
+    background-color: var(--bg-light);
+    border: none;
+    display: none;
+    .close-menu & {
+      background-color: transparent;
+    }
+    &__bar:nth-child(1) {
+      display: block;
+      height: 2px;
+      width: 20px;
+      background: var(--text-secondary-light);
+      transform: translateY(-3px);
+      transition: 0.4s;
+      .close-menu & {
+        display: block;
+        margin: 4px;
+        height: 2px;
+        width: 20px;
+        background: var(--text-secondary-light);
+        border-radius: 9px;
+        transform: rotate(133deg) translateY(-4px) translateX(1px);
+        transition: 0.4s;
+      }
+    }
+    &__bar:nth-child(2) {
+      display: block;
+      height: 2px;
+      width: 10px;
+      background: var(--text-secondary-light);
+      transform: translate(9px, 3px);
+      transition: 0.4s;
+      .close-menu & {
+        display: block;
+        margin: 4px;
+        height: 2px;
+        width: 20px;
+        background: var(--text-secondary-light);
+        border-radius: 9px;
+        transform: rotate(44deg) translate(0px, -4px);
+        transition: 0.4s;
+      }
+    }
+    &__bar:nth-child(3) {
+      display: block;
+      height: 2px;
+      width: 20px;
+      background: var(--text-secondary-light);
+      transform: translate(0px, 9px);
+      transition: 0.4s;
+      .close-menu & {
+        display: none;
+      }
+    }
+  }
+  &__ham-menu {
+    position: absolute;
+    .close-menu & {
+      position: absolute;
+      top: 32px;
+      right: 20px;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  h2 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 23px;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  p,
+  a,
+  label,
+  button {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size: 30px;
+    margin: 0px 0px 30px 0px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+
+  .head {
+    &__logo {
+      position: relative;
+      top: 3px;
+    }
+    &__nav {
+      justify-content: space-between;
+      height: unset;
+      padding: 10px 20px;
+      flex-direction: unset;
+      align-items: center;
+    }
+    &__button {
+      display: block;
+    }
+    &__menu {
+      opacity: 0;
+      transform-origin: top center;
+      transition: opacity 0.5s ease 0.7s, visibility 0.5s ease 0.7s;
+      overflow: hidden;
+      .close-menu & {
+        opacity: 1;
+        visibility: visible;
+      }
+      &__list {
+        display: none;
+      }
+      &__item {
+        display: block;
+        opacity: 0;
+        transform: translateY(16px);
+        transition: all 1s ease;
+        transition-delay: 0s;
+        .animated & {
+          opacity: 1;
+          visibility: visible;
+          transition-delay: 0.3s;
+          transform: none;
+          @for $i from 1 through 12 {
+            $delay: 240 + ($i * 80) + ms;
+            &:nth-child(#{$i}) {
+              transition-delay: $delay;
+            }
+          }
+        }
+      }
+    }
+    &__btn-group {
+      position: absolute;
+      top: 35%;
+      right: 60px;
+    }
+    .translate-btn {
+      img {
+        width: 25px;
+      }
+    }
+    #modeButton {
+      font-size: 26px;
+    }
+    &__btn {
+      display: none;
+    }
+    &__logo {
+      text-align: left;
+      img {
+        width: 45px;
+      }
+    }
+    &__ham-menu {
+      position: relative;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 575.8px) {
+  p,
+  a,
+  label,
+  button {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .head {
+    &__btn-group {
+      gap: 5px;
+    }
+  }
+}
+
+@media (max-width: 380.98px) {
+  p,
+  a,
+  label,
+  button {
+    font-size: 13px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .head {
+    &__image {
+      width: 17rem;
+      margin-left: -15px;
+    }
+    &__ham-menu {
+      right: 0px;
+    }
+  }
+}

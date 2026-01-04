@@ -1,0 +1,190 @@
+.home {
+  margin-top: 90px;
+  background-image: var(--bg-images-light);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  &::before {
+    display: none;
+  }
+  &__hero {
+    padding: 40px;
+    text-align: center;
+  }
+  &__content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      display: flex;
+      flex-direction: column;
+      font-family: "Source Code Pro";
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.5s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transition: all 0.5s ease-out;
+        transition-delay: 0.75s;
+        transform: none;
+      }
+    }
+    &__info {
+      max-width: 60%;
+      p {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: all 0.5s ease;
+        transition-delay: 0s;
+        .animated & {
+          opacity: 1;
+          transition: all 0.5s ease-out;
+          transition-delay: 1s;
+          transform: none;
+        }
+      }
+    }
+    &__cta {
+      margin-top: 50px;
+      a {
+        background: #0069d9;
+        padding: 20px 40px;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: translateY(16px);
+        transition: all 0.5s ease;
+        transition-delay: 0s;
+        .animated & {
+          opacity: 1;
+          transition: all 0.5s ease-out;
+          transition-delay: 1.25s;
+          transform: none;
+        }
+      }
+      a:hover {
+        background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+      }
+    }
+  }
+  &__socials {
+    position: fixed;
+    z-index: 1;
+    top: 60%;
+    right: 10px;
+    padding: 5px;
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    &__social {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 1s ease;
+      transition-delay: 0s;
+      .animated & {
+        opacity: 1;
+        transform: none;
+        @for $i from 1 through 12 {
+          $delay: 240 + ($i * 100) + ms;
+          &:nth-child(#{$i}) {
+            transition-delay: $delay;
+          }
+        }
+      }
+    }
+    &__link {
+      i {
+        font-size: 30px;
+        color: black;
+        padding: 15px;
+      }
+      .fa-linkedin-square:hover {
+        background-color: #007fbc;
+        color: white;
+        border-radius: 5px;
+      }
+      .fa-whatsapp:hover {
+        background: linear-gradient(to right, #25d366, #128c7e);
+        color: white;
+        border-radius: 5px;
+      }
+      .fa-instagram:hover {
+        background: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        color: white;
+        border-radius: 5px;
+      }
+      .fa-github-square:hover {
+        background: linear-gradient(90deg, #24292e 0%, #181717 100%);
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .home {
+    background-image: url(../images/bg/bg_common2.jpg);
+    margin-top: 70px;
+    &__hero {
+      padding: 20px;
+    }
+    &__content {
+      &__info {
+        max-width: 100%;
+      }
+      &__cta {
+        margin-top: 80px;
+        a {
+          padding: 20px 30px;
+        }
+      }
+    }
+    &__socials {
+      position: fixed;
+      top: 65%;
+      right: 10px;
+      i {
+        font-size: 25px;
+        padding: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575.8px) {
+  .home {
+    h1 {
+      display: block;
+    }
+    &__content {
+      &__cta {
+        a {
+          padding: 18px 28px;
+        }
+      }
+    }
+    &__socials {
+      padding: 4px;
+      top: 75%;
+      i {
+        font-size: 20px;
+        padding: 8px;
+      }
+    }
+  }
+}

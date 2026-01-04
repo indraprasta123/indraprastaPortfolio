@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/style/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>My Porfolio</title>
+  </head>
+  <body>
+    <!-- LOADING SCREEN -->
+    <div id="loading">
+      <div class="circle-container">
+        <svg>
+          <circle class="bg" cx="60" cy="60" r="50" />
+          <circle class="progress" cx="60" cy="60" r="50" />
+        </svg>
+        <div class="percentage" id="percent">0%</div>
+      </div>
+    </div>
+
+    <header class="head">
+      <nav class="head__nav">
+        <div class="head__logo">
+          <a href="./public/images/indra_profile.png" class="head__logo__link">
+            <img
+              class="head__logo__icon"
+              src="./public/images/indra_profile.png"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <div class="head__menu">
+          <ul class="head__menu__list animation">
+            <li class="head__menu__item">
+              <a
+                data-lang="nav-home"
+                href="#home"
+                class="head__menu__link hover"
+                id="bold"
+                >HOME</a
+              >
+            </li>
+            <li class="head__menu__item">
+              <a
+                data-lang="nav-about"
+                href="#p-about"
+                class="head__menu__link hover"
+                >ABOUT</a
+              >
+            </li>
+            <li class="head__menu__item">
+              <a href="#p-career" class="head__menu__link hover">CAREER</a>
+            </li>
+            <li class="head__menu__item">
+              <a
+                data-lang="nav-projects"
+                href="p-career"
+                class="head__menu__link hover"
+                >PROJECTS</a
+              >
+            </li>
+            <li class="head__menu__item">
+              <a
+                data-lang="nav-contact"
+                href="p-contact"
+                class="head__menu__link hover"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="head__btn-group btn-group">
+          <button class="btn translate-btn" id="translateBtn">
+            <img src="./public/images/icon/indonesia.png" alt="" />
+          </button>
+          <button id="modeButton">
+            <i class="fa fa-moon-o"></i>
+          </button>
+          <!-- <span class="mode-label">Dark Mode</span> -->
+        </div>
+        <div class="head__ham-menu">
+          <button id="show-menu" class="head__button">
+            <span class="head__button__bar"></span>
+            <span class="head__button__bar"></span>
+            <span class="head__button__bar"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="home" id="home">
+        <div class="home__hero animation">
+          <div class="home__content">
+            <div class="home__content__title">
+              <h1>
+                INDRAPRASTA
+                <strong>DWINANDA FAHREZA</strong>
+              </h1>
+            </div>
+            <div class="home__content__info">
+              <p data-lang="home-info">
+                A professional in administration and informatics with experience
+                in data management and website development.
+              </p>
+            </div>
+            <div class="home__content__cta">
+              <a data-lang="home-btn" href="https://wa.me/6285740529930"
+                >CONTACT ME</a
+              >
+            </div>
+          </div>
+          <div class="home__socials animation">
+            <div class="home__socials__social">
+              <a
+                href="https://www.linkedin.com/in/indra-prasta-b1878a278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                class="home__socials__link"
+              >
+                <i class="fa fa-linkedin-square"></i>
+              </a>
+            </div>
+            <div class="home__socials__social">
+              <a href="https://wa.me/6281234567890" class="home__socials__link">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+            </div>
+            <div class="home__socials__social">
+              <a
+                href="https://www.instagram.com/indraprasta_df?igsh=dm56aTg0OTZzMXEx"
+                class="home__socials__link"
+              >
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+            <div class="home__socials__social">
+              <a
+                href="https://github.com/indraprasta123"
+                class="home__socials__link"
+              >
+                <i class="fa fa-github-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="p-about">
+        <div class="about__container">
+          <div class="animations animation">
+            <div class="about__title">
+              <h2 data-lang="about-title">ABOUT ME</h2>
+              <p data-lang="desc-about-title">
+                Here you will find more information about me, what I do, and my
+                current skills, especially in programming and administration.
+              </p>
+              <div class="pdf_btn">
+                <button id="lihatBtn" class="btn">
+                  <i class="fa fa-eye"></i> CV
+                </button>
+                <!-- Kontainer PDF (tersembunyi awalnya) -->
+                <div id="pdfContainer" class="pdf-container hidden">
+                  <iframe
+                    src="./public/file/CV_Indraprasta.pdf"
+                    frameborder="0"
+                  ></iframe>
+                  <div class="pdf-actions">
+                    <a
+                      data-lang="open-cv"
+                      href="./public/file/CV_Indraprasta.pdf"
+                      target="_blank"
+                      class="btn"
+                      >OPEN</a
+                    >
+                    <a
+                      data-lang="unduh-cv"
+                      href="./public/file/CV_Indraprasta.pdf"
+                      download
+                      class="btn btn-download"
+                      >DWONLOAD</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about__content">
+            <div class="animation">
+              <div class="about__content__left">
+                <h3 data-lang="txt-1" class="animasi">Get to know me!</h3>
+                <p data-lang="txt-2" class="animasi">
+                  I am a graduate of the Diploma in Informatics Engineering from
+                  <strong data-lang="txt-3"
+                    >Politeknik Sawunggalih Aji Purworejo (2025)</strong
+                  >, with more than three years of experience as an
+                  <strong data-lang="txt-4">Administrative Staff</strong> at
+                  <strong data-lang="txt-5">CV Wibawa Putra Utamajaya</strong>.
+                </p>
+                <p data-lang="txt-6" class="animasi">
+                  During my work, I was responsible for managing goods delivery,
+                  company finances, and inventory in a systematic and efficient
+                  manner. In addition to having strong
+                  <strong data-lang="txt-7">administrative</strong> skills, I
+                  also possess technical expertise in
+                  <strong data-lang="txt-8">web application programming</strong
+                  >, including proficiency in HTML, CSS, SCSS, JavaScript, and
+                  PHP.
+                </p>
+                <p data-lang="txt-9" class="animasi">
+                  I have developed several
+                  <strong data-lang="txt-10">web projects</strong>, including
+                  school websites, personal websites, business websites, and
+                  restaurant web applications, which have strengthened my
+                  ability to design, build, and manage web-based systems
+                  professionally.
+                </p>
+
+                <p data-lang="txt-11" class="animasi">
+                  I am open to
+                  <strong data-lang="txt-12">job opportunities</strong> where I
+                  can contribute, learn, and grow. If you have a great
+                  opportunity that matches my skills and experience, please
+                  don’t hesitate to
+                  <strong data-lang="txt-13">contact</strong> me.
+                </p>
+              </div>
+            </div>
+            <div class="about__content__right animation">
+              <div class="about__content__right__animasi">
+                <div class="about__content__images">
+                  <img src="./public/images/indra_noBG.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="animation">
+            <div class="about__skill-title">
+              <h3 data-lang="txt-14">My Skill</h3>
+            </div>
+            <div class="about__content__skill">
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>SCSS</p>
+              <p>Bootstrap</p>
+              <p>JavaScript</p>
+              <p>PHP</p>
+              <p>Codeigniter</p>
+              <p>Laravel</p>
+              <p>MYSQL</p>
+              <p>Github</p>
+              <p data-lang="administration.">Administration</p>
+              <p data-lang="accounting.">Accounting</p>
+              <p data-lang="teknikal/software.">Technical/Software</p>
+              <p data-lang="skill-network">Network</p>
+              <p data-lang="skill-operating">Operating System</p>
+              <p data-lang="skill-software-tools">Software And Tools</p>
+            </div>
+            <div class="about__cta">
+              <a data-lang="btn-contact" href="https://wa.me/6281234567890"
+                >CONTACT</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="career" id="p-career">
+        <div class="career__container">
+          <div class="animations animation">
+            <div class="career__title">
+              <h2 data-lang="career-title">CAREER</h2>
+              <p data-lang="txt-16">My work experience</p>
+            </div>
+          </div>
+          <div class="career__content animation">
+            <div class="career__content__programmer">
+              <i class="fa fa-code career-icon" aria-hidden="true"></i>
+              <h3 data-lang="txt-17">Junior Web Developer</h3>
+              <strong data-lang="txt-18">2024 to Current</strong>
+              <p data-lang="txt-19">
+                I am a Junior Web Developer skilled in developing websites using
+                HTML, CSS, SCSS, Bootstrap, JavaScript, PHP, CodeIgniter,
+                Laravel, and MySQL. I am also familiar with using GitHub for
+                collaboration and code version management. I focus on creating
+                responsive web interfaces, optimal performance, and a clean and
+                efficient code structure.
+              </p>
+              <a data-lang="txt-20" href="./src/web-developer.html"
+                >READ MORE</a
+              >
+            </div>
+            <div class="career__content__administration">
+              <i class="fa fa-briefcase career-icon" aria-hidden="true"></i>
+              <h3 data-lang="txt-21">Administration</h3>
+              <strong data-lang="txt-22">2020 to 2023</strong>
+              <p data-lang="txt-23">
+                I have experience as an Administrative Staff at CV Wibawa Putra
+                Utamajaya. In this position, I was responsible for managing
+                shipments, recording and managing the company's finances, and
+                monitoring inventory. I am accustomed to working with precision
+                and a high level of responsibility to ensure the smooth
+                operation of the company.
+              </p>
+              <a data-lang="txt-24" href="./src/administration.html"
+                >READ MORE</a
+              >
+            </div>
+            <div class="career__content__welding-asistant">
+              <i class="fa fa-wrench career-icon" aria-hidden="true"></i>
+              <h3 data-lang="txt-25">IT Support</h3>
+              <strong data-lang="txt-26">2023 to 2024</strong>
+              <p data-lang="txt-27">
+                Handle the installation, configuration, and maintenance of
+                computer systems, networks, and assist users in solving
+                technical problems efficiently at the Sawunggalih Aji Kutoarjo
+                Polytechnic.
+              </p>
+              <a data-lang="txt-28" href="./src/IT-Support.html">READ MORE</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="projects" id="p-projects">
+        <div class="projetcs__container">
+          <div class="animation">
+            <div class="projects__title">
+              <h2 data-lang="projects-title">PROJECTS</h2>
+              <p data-lang="txt-29">
+                Here you will find some personal and client projects I have
+                created, each containing its own case study.
+              </p>
+            </div>
+          </div>
+          <div class="projects__content">
+            <div class="projects__content__caraousel">
+              <div class="projects__content__sliderDekstop">
+                <div class="projects__content__slider1">
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-bkk.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-bkk.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-30">BKK KARANGJATI</h3>
+                      <p data-lang="txt-31">
+                        I created a website for BKK Karangjati, a welding
+                        workshop specializing in the manufacture of construction
+                        equipment, using frontend technology that I have
+                        mastered.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/workshop_karangjati/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-rs.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-rs.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-32">AMBON GENERAL HOSPITAL</h3>
+                      <p data-lang="txt-33">
+                        This system is an employee attendance website for Ambon
+                        General Hospital which is equipped with facial
+                        verification and Google Map location tracking, designed
+                        to increase the efficiency and accuracy of attendance
+                        data.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://github.com/indraprasta123/rs-ambon"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-veterinary.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-veterinary.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-34">VETERINARY</h3>
+                      <p data-lang="desc-veterinary">
+                        This website serves as an animal disease information
+                        platform aimed at veterinarians. Built with front-end
+                        expertise, the interface is modern, interactive, and
+                        easy to understand.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/pet_veterinary/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-wedding.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-putin.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-35">WATER PICTURE</h3>
+                      <p data-lang="txt-36">
+                        This website aims to promote Water Picture's various
+                        wedding packages. The project was developed using
+                        front-end expertise, creating an elegant, responsive,
+                        and accessible design for potential customers.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/wedding/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-portfolio.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-portfolio.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-37">PORTFOLIO TEMPLATE</h3>
+                      <p data-lang="txt-38">
+                        This website is the result of my experiment in imitating
+                        a portfolio website template. It was developed using
+                        HTML, CSS, SCSS, and JavaScript to explore modern design
+                        structures and styles.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/portfolioWeb-AchtemesTamplate/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-misuren.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-misuren.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-41">MI IMAMPURO SUREN</h3>
+                      <p data-lang="txt-42">
+                        This school website provides various information
+                        regarding the organizational structure of MI Imam Puro
+                        Suren, starting from the leadership to the support
+                        staff, making it easier for visitors to get to know the
+                        school profile.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/misuren/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-rmbersama.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-rmbersama.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-43">RM BERSAMA</h3>
+                      <p data-lang="txt-44">
+                        This website was created to serve online orders for
+                        processed goat products from RM Bersama, with an
+                        informative display and an integrated system in the form
+                        of an admin dashboard to manage orders and a courier
+                        dashboard to monitor deliveries.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://github.com/indraprasta123/rmbersama"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__content__sliderMobile">
+                <div class="projects__content__slider2">
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-bkk.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-bkk.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-30">BKK KARANGJATI</h3>
+                      <p data-lang="txt-31">
+                        I created a website for BKK Karangjati, a welding
+                        workshop specializing in the manufacture of construction
+                        equipment, using frontend technology that I have
+                        mastered.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/workshop_karangjati/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-rs.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-rs.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-32">AMBON GENERAL HOSPITAL</h3>
+                      <p data-lang="txt-33">
+                        This system is an employee attendance website for Ambon
+                        General Hospital which is equipped with facial
+                        verification and Google Map location tracking, designed
+                        to increase the efficiency and accuracy of attendance
+                        data.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://github.com/indraprasta123/rs-ambon"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-veterinary.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-veterinary.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-34">VETERINARY</h3>
+                      <p data-lang="desc-veterinary">
+                        This website serves as an animal disease information
+                        platform aimed at veterinarians. Built with front-end
+                        expertise, the interface is modern, interactive, and
+                        easy to understand.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/pet_veterinary/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-wedding.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-putin.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-35">WATER PICTURE</h3>
+                      <p data-lang="txt-36">
+                        This website aims to promote Water Picture's various
+                        wedding packages. The project was developed using
+                        front-end expertise, creating an elegant, responsive,
+                        and accessible design for potential customers.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/wedding/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-portfolio.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-portfolio.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-37">PORTFOLIO TEMPLATE</h3>
+                      <p data-lang="txt-38">
+                        This website is the result of my experiment in imitating
+                        a portfolio website template. It was developed using
+                        HTML, CSS, SCSS, and JavaScript to explore modern design
+                        structures and styles.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/portfolioWeb-AchtemesTamplate/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-misuren.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-misuren.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-41">MI IMAMPURO SUREN</h3>
+                      <p data-lang="txt-42">
+                        This school website provides various information
+                        regarding the organizational structure of MI Imam Puro
+                        Suren, starting from the leadership to the support
+                        staff, making it easier for visitors to get to know the
+                        school profile.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://indraprasta123.github.io/misuren/"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                  <div class="projects__content__row animation">
+                    <div class="projects__content__images">
+                      <img
+                        class="dekstop"
+                        src="./public/images/device/dekstop-rmbersama.png"
+                        alt=""
+                      />
+                      <img
+                        class="mobile"
+                        src="./public/images/device/mobile-rmbersama.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="projects__content__right-side">
+                      <h3 data-lang="txt-43">RM BERSAMA</h3>
+                      <p data-lang="txt-44">
+                        This website was created to serve online orders for
+                        processed goat products from RM Bersama, with an
+                        informative display and an integrated system in the form
+                        of an admin dashboard to manage orders and a courier
+                        dashboard to monitor deliveries.
+                      </p>
+                      <a
+                        data-lang="cta-study"
+                        href="https://github.com/indraprasta123/rmbersama"
+                        >CASE STUDY</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="p-contact">
+        <div class="contact__container">
+          <div class="animation">
+            <div class="contact__title">
+              <h2 data-lang="contact-title">Contact</h2>
+              <p data-lang="txt-45">
+                Feel free to Contact me by submitting the form below and I will
+                get back to you as soon as possible
+              </p>
+            </div>
+          </div>
+          <div class="contact__content animation">
+            <form action="" id="contactForm" class="contact__content__form">
+              <div class="contact__content__form-field">
+                <label data-lang="name-label" for="">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  data-placeholder="name-placeholder"
+                  placeholder="Enter Your Name"
+                />
+              </div>
+              <div class="contact__content__form-field">
+                <label data-lang="name-email" for="">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  data-placeholder="email-placeholder"
+                  placeholder="Enter Your Email"
+                />
+              </div>
+              <div class="contact__content__form-field">
+                <label data-lang="message-label" for="">Message</label>
+                <textarea
+                  id="message"
+                  data-placeholder="message-placeholder"
+                  placeholder="Enter Your Message"
+                ></textarea>
+              </div>
+              <button id="submitBtn" type="submit" disabled>SUBMIT</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__content">
+            <div class="footer__left-side">
+              <h3>INDRAPRASTA DWINANDA FAHREZA</h3>
+              <div class="footer__left-side__contact">
+                <div class="footer__left-side__phone">
+                  <i class="fa fa-phone"></i>
+                  <p>+62 857 4052 9930</p>
+                </div>
+                <div class="footer__left-side__email">
+                  <i class="fa fa-envelope"></i>
+                  <p>indraprastadwinanda@gmail.com</p>
+                </div>
+              </div>
+              <p data-lang="txt-46">
+                A Frontend focused Web Developer building the Frontend of
+                Websites and Web Applications that leads to the success of the
+                overall product
+              </p>
+            </div>
+            <div class="footer__right-side">
+              <div class="footer__right-side__address">
+                <i class="fa fa-map-marker"></i>
+                <p data-lang="txt-47">
+                  Address: Pengadegan, South Jakarta City, Special Capital
+                  Region Jakarta
+                </p>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.103649970158!2d106.84591657499064!3d-6.2500711937383455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTUnMDAuMyJTIDEwNsKwNTAnNTQuNiJF!5e0!3m2!1sid!2sid!4v1766757277231!5m2!1sid!2sid"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <div class="footer__copyright">
+            <p data-lang="txt-copyright">
+              © Copyright 2025. Made by Indraprasta Dwinanda Fahreza
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"
+    ></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script src="./public/js/script.js"></script>
+  </body>
+</html>
