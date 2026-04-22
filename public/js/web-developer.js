@@ -60,7 +60,6 @@ window.addEventListener("load", () => {
       setTimeout(() => {
         loading.style.display = "none";
 
-        // 🔥 BARU AKTIFKAN ANIMASI SETELAH LOADING HILANG
         initScrollAnimation();
       }, 600);
     }
@@ -188,12 +187,12 @@ window.onmouseup = (event) => {
   cursor.style.backgroundColor = "#F5F74900";
 };
 
-// === ELEMENT ===
+
 const translateBtn = document.getElementById("translateBtn");
 const modeBtn = document.getElementById("modeBtn");
-let currentLang = "en"; // Default bahasa Inggris
+let currentLang = "en"; 
 
-// === DATA TERJEMAHAN ===
+
 const translations = {
   id: {
     logo: "Indra Portfolio",
