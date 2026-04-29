@@ -40,6 +40,7 @@ body {
   margin: 0;
   font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-light);
+  
 }
 
 #loading {
@@ -50,7 +51,9 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 10;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
 }
 
 #loading.hide {
@@ -228,7 +231,10 @@ body.translate-mode {
     border: transparent;
     font-size: 30px;
     cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      transform 0.2s ease;
   }
 
   #modeButton:hover {
@@ -363,7 +369,9 @@ body.translate-mode {
     &__menu {
       opacity: 0;
       transform-origin: top center;
-      transition: opacity 0.5s ease 0.7s, visibility 0.5s ease 0.7s;
+      transition:
+        opacity 0.5s ease 0.7s,
+        visibility 0.5s ease 0.7s;
       overflow: hidden;
       .close-menu & {
         opacity: 1;

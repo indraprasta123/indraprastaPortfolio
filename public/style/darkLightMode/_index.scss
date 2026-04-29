@@ -136,6 +136,24 @@ body.dark-mode {
     box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
   }
 
+  .about__content__skills__card {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+    transition: 0.1s ease;
+  }
+
+  .about__content__skills__badge {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+  }
+
+  .about__content__cta a {
+    background: #2eae7e;
+    &:hover {
+      background: linear-gradient(90deg, #2196f3 0%, #2eae7e 100%);
+    }
+  }
+
   .about__content__skill p {
     background: #1e293b;
   }
@@ -236,6 +254,10 @@ body.dark-mode {
       background: rgb(0 0 0 / 76%);
       inset: 0;
     }
+  }
+
+  .skills {
+    background: #1e293b;
   }
 
   .contact {

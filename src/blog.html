@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenapa Keranjang Bisa Nambah Sendiri?</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        transition: 0.3s;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .blog-title {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .blog-date {
+        font-size: 14px;
+        color: gray;
+        margin-top: 5px;
+      }
+
+      .blog-content {
+        margin-top: 20px;
+      }
+
+      .blog-content h2 {
+        margin-top: 30px;
+        font-size: 20px;
+      }
+
+      .blog-content p {
+        line-height: 1.8;
+        margin-bottom: 14px;
+      }
+
+      .blog-content code {
+        background: #eee;
+        padding: 3px 6px;
+        border-radius: 5px;
+        font-size: 13px;
+      }
+
+      body.light {
+        background: #fff7ed;
+        color: #1e293b;
+      }
+
+      body.dark {
+        background: #020617;
+        color: #e2e8f0;
+      }
+    </style>
+  </head>
+  <body class="light">
+    <div class="container">
+      <h1 class="blog-title">Kenapa Keranjang Bisa Nambah Sendiri?</h1>
+      <p class="blog-date">22 April 2026</p>
+
+      <div class="blog-content">
+        <p>
+          Bug ini awalnya kelihatan sepele. Bahkan bisa dibilang hampir nggak
+          keliatan. Tapi justru itu yang bikin bahaya. Karena semakin lama
+          dipakai, efeknya makin terasa.
+        </p>
+
+        <p>
+          Di aplikasi yang saya buat, ada fitur keranjang seperti marketplace.
+          User bisa menambahkan produk, lalu jumlahnya akan bertambah sesuai
+          klik. Secara teori sederhana. Secara praktik… tidak semenyenangkan
+          itu.
+        </p>
+
+        <h2>Gejala yang Muncul</h2>
+        <p>
+          Saat user menambahkan produk A, yang bertambah malah produk B. Kadang
+          benar, kadang salah. Tidak konsisten. Dan itu membuat debugging jadi
+          lebih menyebalkan.
+        </p>
+
+        <p>
+          Ini tipe bug yang tidak langsung crash, tapi merusak data secara
+          diam-diam. Dan biasanya baru ketahuan saat sudah cukup parah.
+        </p>
+
+        <h2>Kesalahan Utama</h2>
+        <p>
+          Setelah ditelusuri, masalahnya ada di cara saya mengelola array
+          keranjang. Saya menggunakan <code>index</code> sebagai acuan untuk
+          update data.
+        </p>
+
+        <p>Contoh:</p>
+
+        <p><code>cart[index].qty += 1</code></p>
+
+        <p>
+          Ini kelihatan normal, tapi sebenarnya berbahaya. Karena index bisa
+          berubah tergantung urutan data, filtering, atau re-render.
+        </p>
+
+        <h2>Kenapa Ini Bisa Terjadi?</h2>
+        <p>
+          Dalam JavaScript, array itu berbasis urutan. Tapi dalam aplikasi
+          nyata, data tidak selalu stabil.
+        </p>
+
+        <p>
+          Ketika kita menambah atau menghapus item, posisi index bisa bergeser.
+          Dan kalau logic kita bergantung pada index, maka kita sedang menanam
+          bom waktu di aplikasi.
+        </p>
+
+        <h2>Solusi yang Benar</h2>
+        <p>Gunakan ID sebagai acuan, bukan index.</p>
+
+        <p><code>cart.find(item => item.id === product.id)</code></p>
+
+        <p>
+          Dengan cara ini, kita memastikan bahwa data yang diubah adalah data
+          yang benar, bukan sekadar posisi di array.
+        </p>
+
+        <h2>Refleksi</h2>
+        <p>
+          Bug ini ngajarin satu hal penting: masalah kecil yang diabaikan bisa
+          jadi masalah besar di kemudian hari.
+        </p>
+
+        <p>
+          Dan yang lebih penting lagi, sebagai developer kita harus ngerti alur
+          data, bukan cuma bikin fitur jalan.
+        </p>
+
+        <h2>Kesimpulan</h2>
+        <p>
+          Jangan pernah mengandalkan index untuk data yang dinamis. Selalu
+          gunakan identifier unik seperti ID.
+        </p>
+
+        <p>
+          Debugging bukan tentang seberapa cepat kita menemukan solusi, tapi
+          seberapa dalam kita memahami masalahnya.
+        </p>
+
+        <p>
+          Dan kadang… bug itu bukan karena kita bodoh, tapi karena kita terlalu
+          percaya diri dengan kode sendiri.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

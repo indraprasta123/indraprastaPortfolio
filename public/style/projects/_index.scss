@@ -199,6 +199,9 @@
           padding: 20px 30px;
         }
       }
+      &__slider2 {
+        height: 50%;
+      }
       &__images {
         margin-top: 60px;
       }
@@ -209,6 +212,7 @@
         display: block;
         width: 100%;
       }
+
     }
   }
 }
@@ -221,9 +225,7 @@
           padding: 18px 28px;
         }
       }
-      &__slider2 {
-        height: 100vh;
-      }
+
       .slick-dots li {
         width: 10px;
         height: 10px;

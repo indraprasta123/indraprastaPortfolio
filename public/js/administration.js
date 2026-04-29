@@ -153,7 +153,7 @@ const animateCursor = (event, interacting, interactable) => {
     fill: "forwards",
   });
 };
-
+s;
 window.onmousemove = (event) => {
   const interactable = event.target.closest(".hover"),
     interacting = interactable !== null;
