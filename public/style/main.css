@@ -958,7 +958,6 @@ body.translate-mode {
   transform: none;
 }
 .about__content__skills .sub-title-class {
-  background-color: #0069d9;
   opacity: 0;
   transform: translateY(16px);
   transition: all 0.5s ease;
