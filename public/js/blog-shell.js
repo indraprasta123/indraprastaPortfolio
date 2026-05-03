@@ -1,16 +1,11 @@
-<!doctype html>
-<html lang="en" data-blog-key="cart-index">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/style/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <title>Blog - Indraprasta Portfolio</title>
-  </head>
-  <body>
+(function () {
+  const shell = document.getElementById("blog-shell");
+
+  if (!shell) {
+    return;
+  }
+
+  shell.outerHTML = `
     <header class="head">
       <nav class="head__nav">
         <div class="head__logo">
@@ -35,7 +30,6 @@
         </div>
       </nav>
     </header>
-
     <main class="blog-page">
       <section class="blog-hero">
         <div class="blog-hero__container animation">
@@ -53,18 +47,11 @@
       <section class="blog-layout">
         <article class="blog-article animation" data-blog-field="content"></article>
         <aside class="blog-sidebar animation">
-          <div class="blog-sidebar__box">
-            <h3 data-lang="blog-keypoints">Key Points</h3>
-            <ul data-blog-field="points"></ul>
-          </div>
-          <div class="blog-sidebar__box">
-            <h3 data-lang="blog-topics">Topics</h3>
-            <div class="blog-tags" data-blog-field="tags"></div>
-          </div>
+          <div class="blog-sidebar__box"><h3 data-lang="blog-keypoints">Key Points</h3><ul data-blog-field="points"></ul></div>
+          <div class="blog-sidebar__box"><h3 data-lang="blog-topics">Topics</h3><div class="blog-tags" data-blog-field="tags"></div></div>
         </aside>
       </section>
     </main>
-
     <footer class="footer">
       <div class="footer__container">
         <div class="footer__content">
@@ -84,9 +71,5 @@
         <div class="footer__copyright"><p data-lang="txt-copyright">© Copyright 2025. Made by Indraprasta Dwinanda Fahreza</p></div>
       </div>
     </footer>
-
-    <script src="../public/js/cursor.js"></script>
-    <script src="../public/js/blog-dropdown.js"></script>
-    <script src="../public/js/blog.js"></script>
-  </body>
-</html>
+  `;
+})();

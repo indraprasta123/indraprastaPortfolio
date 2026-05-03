@@ -120,55 +120,6 @@ function startAnimationObserver() {
 //   observerHome.observe(item);
 // });
 
-//cursor
-const custom_cursor = document.getElementById("cursor");
-const pointer = document.getElementById("pointer");
-
-const animateCursor = (event, interacting, interactable) => {
-  let cursorX = `calc(${event.clientX}px - 1.125rem)`,
-    cursorY = `calc(${event.clientY}px - 1.125rem)`;
-
-  let pointerX = `calc(${event.clientX}px - 0.25rem)`,
-    pointerY = `calc(${event.clientY}px - 0.25rem)`;
-
-  pointer.style.transform = `translate(${pointerX}, ${pointerY})`;
-
-  const dimensions = interacting ? interactable.getBoundingClientRect() : null;
-  const radius = interacting ? "0px" : "50%";
-
-  if (interacting) {
-    cursorX = dimensions.x - 2 + "px";
-    cursorY = dimensions.y - 2 + "px";
-  }
-
-  const cursor_keyframes = {
-    transform: `translate(${cursorX}, ${cursorY})`,
-    width: interacting ? `${dimensions.width}px` : "2rem",
-    height: interacting ? `${dimensions.height}px` : "2rem",
-    borderRadius: radius,
-  };
-
-  custom_cursor.animate(cursor_keyframes, {
-    duration: 400,
-    fill: "forwards",
-  });
-};
-s;
-window.onmousemove = (event) => {
-  const interactable = event.target.closest(".hover"),
-    interacting = interactable !== null;
-
-  animateCursor(event, interacting, interactable);
-};
-
-window.onmousedown = (event) => {
-  cursor.style.backgroundColor = "transparent";
-};
-
-window.onmouseup = (event) => {
-  cursor.style.backgroundColor = "#F5F74900";
-};
-
 //pdf
 const lihatBtn = document.getElementById("lihatBtn");
 const pdfContainer = document.getElementById("pdfContainer");
@@ -195,10 +146,21 @@ const translations = {
     "nav-home": "BERANDA",
     "nav-about": "TENTANG",
     "nav-career": "KARIR",
-    "nav-projects": "PROYEK",
+    "nav-projects": "PROJECTS",
     "nav-contact": "KONTAK",
     "nav-workExperience": "PENGALAMAN KERJA",
     "nav-skills": "SKILL",
+    "nav-blog": 'BLOG <i class="fa fa-angle-down"></i>',
+    "blog-cart-index": "Bug Jumlah Keranjang",
+    "blog-state-id": "State dan ID Stabil",
+    "blog-api-error": "Membaca Error API",
+    "blog-responsive": "Catatan UI Responsif",
+    "blog-dark-mode": "Detail Dark Mode",
+    "blog-clean-code": "Kebiasaan Clean Code",
+    "blog-auth": "Alur Autentikasi",
+    "blog-database": "Catatan Database",
+    "blog-deploy": "Checklist Deployment",
+    "blog-debugging": "Pola Pikir Debugging",
     "home-info":
       "Seorang profesional di bidang administrasi dan informatika dengan pengalaman dalam manajemen data dan pengembangan situs web.",
     "home-btn": "HUBUNGI SAYA",
@@ -337,6 +299,17 @@ const translations = {
     "nav-contact": "CONTACT",
     "nav-workExperience": "WORK EXPERIENCE",
     "nav-skills": "SKILLS",
+    "nav-blog": 'BLOG <i class="fa fa-angle-down"></i>',
+    "blog-cart-index": "Cart Quantity Bug",
+    "blog-state-id": "State and Stable ID",
+    "blog-api-error": "Reading API Errors",
+    "blog-responsive": "Responsive UI Notes",
+    "blog-dark-mode": "Dark Mode Details",
+    "blog-clean-code": "Clean Code Habits",
+    "blog-auth": "Authentication Flow",
+    "blog-database": "Database Notes",
+    "blog-deploy": "Deployment Checklist",
+    "blog-debugging": "Debugging Mindset",
     "nav-projects": "PROYEK",
     "home-info":
       "A professional in administration and informatics with experience in data management and website development.",

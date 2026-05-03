@@ -84,7 +84,7 @@
         }
       }
       p {
-        margin-bottom: 50px;
+        margin-bottom: 18px;
         opacity: 0;
         transform: translateY(16px);
         transition: all 0.5s ease;
@@ -93,6 +93,36 @@
           opacity: 1;
           transition: all 0.4s ease-out;
           transition-delay: 0.4s;
+          transform: none;
+        }
+      }
+      .project-description--collapsed {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      .project-description--expanded {
+        display: block;
+        overflow: visible;
+      }
+      .project-read-more {
+        border: 0;
+        background: transparent;
+        color: #0069d9;
+        font-weight: 700;
+        margin: 0 0 28px;
+        padding: 0;
+        text-transform: uppercase;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(16px);
+        transition: all 0.5s ease;
+        transition-delay: 0s;
+        .animated & {
+          opacity: 1;
+          transition: all 0.4s ease-out;
+          transition-delay: 0.45s;
           transform: none;
         }
       }

@@ -51,6 +51,32 @@ body.dark-mode {
     }
   }
 
+  .head__dropdown__menu {
+    background: #1e293b;
+    box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+  }
+
+  .head__dropdown__link:hover {
+    background: rgba(46, 174, 126, 0.12);
+    color: #2eae7e !important;
+  }
+
+  .head__dropdown__toggle {
+    color: var(--text-dark) !important;
+  }
+
+  @media only screen and (max-width: 767.98px) {
+    .head__dropdown__toggle {
+      border-color: rgba(46, 174, 126, 0.22);
+    }
+
+    .head__dropdown__menu {
+      background: rgba(46, 174, 126, 0.1);
+      border-left-color: #2eae7e;
+      box-shadow: none;
+    }
+  }
+
   .head__button {
     background-color: var(--bg-dark);
   }

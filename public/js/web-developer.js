@@ -138,56 +138,6 @@ $(".skills__content__slider2").slick({
   dots: true,
 });
 
-//cursor
-const custom_cursor = document.getElementById("cursor");
-const pointer = document.getElementById("pointer");
-
-const animateCursor = (event, interacting, interactable) => {
-  let cursorX = `calc(${event.clientX}px - 1.125rem)`,
-    cursorY = `calc(${event.clientY}px - 1.125rem)`;
-
-  let pointerX = `calc(${event.clientX}px - 0.25rem)`,
-    pointerY = `calc(${event.clientY}px - 0.25rem)`;
-
-  pointer.style.transform = `translate(${pointerX}, ${pointerY})`;
-
-  const dimensions = interacting ? interactable.getBoundingClientRect() : null;
-  const radius = interacting ? "0px" : "50%";
-
-  if (interacting) {
-    cursorX = dimensions.x - 2 + "px";
-    cursorY = dimensions.y - 2 + "px";
-  }
-
-  const cursor_keyframes = {
-    transform: `translate(${cursorX}, ${cursorY})`,
-    width: interacting ? `${dimensions.width}px` : "2rem",
-    height: interacting ? `${dimensions.height}px` : "2rem",
-    borderRadius: radius,
-  };
-
-  custom_cursor.animate(cursor_keyframes, {
-    duration: 400,
-    fill: "forwards",
-  });
-};
-
-window.onmousemove = (event) => {
-  const interactable = event.target.closest(".hover"),
-    interacting = interactable !== null;
-
-  animateCursor(event, interacting, interactable);
-};
-
-window.onmousedown = (event) => {
-  cursor.style.backgroundColor = "transparent";
-};
-
-window.onmouseup = (event) => {
-  cursor.style.backgroundColor = "#F5F74900";
-};
-
-
 const translateBtn = document.getElementById("translateBtn");
 const modeBtn = document.getElementById("modeBtn");
 let currentLang = "en"; 
@@ -201,6 +151,17 @@ const translations = {
     "nav-career": "KARIR",
     "nav-projects": "PROYEK",
     "nav-contact": "KONTAK",
+    "nav-blog": 'BLOG <i class="fa fa-angle-down"></i>',
+    "blog-cart-index": "Bug Jumlah Keranjang",
+    "blog-state-id": "State dan ID Stabil",
+    "blog-api-error": "Membaca Error API",
+    "blog-responsive": "Catatan UI Responsif",
+    "blog-dark-mode": "Detail Dark Mode",
+    "blog-clean-code": "Kebiasaan Clean Code",
+    "blog-auth": "Alur Autentikasi",
+    "blog-database": "Catatan Database",
+    "blog-deploy": "Checklist Deployment",
+    "blog-debugging": "Pola Pikir Debugging",
     "home-info":
       "Seorang profesional di bidang administrasi dan informatika dengan pengalaman dalam manajemen data dan pengembangan situs web.",
     "home-btn": "HUBUNGI SAYA",
@@ -240,6 +201,17 @@ const translations = {
     "txt-28": "SELENGKAPNYA",
     "projects-title": "PROYEK",
     "cta-study": "STUDI KASUS",
+    "project-read-more": "SELENGKAPNYA",
+    "project-read-less": "SEMBUNYIKAN",
+    "project-fayda-title": "FAYDA STORE",
+    "project-fayda-desc":
+      "Aplikasi e-commerce full-stack untuk produk makanan dan minuman dengan pencarian berbasis AI berupa teks dan gambar, manajemen keranjang, dan berbagai metode pembayaran. Fiturnya mencakup perhitungan ongkir real-time, autentikasi aman, dan notifikasi otomatis. Berperan sebagai Fullstack Developer dalam pengembangan end-to-end.",
+    "project-ternaqku-title": "TERNAQKU",
+    "project-ternaqku-desc":
+      "Sistem manajemen peternakan berbasis web yang membantu peternak memantau dan mengelola ternak secara efisien. Fiturnya mencakup pencatatan data ternak seperti umur, ras, status kesehatan, pelacakan lokasi menggunakan geolocation, dan rekomendasi pakan berbasis AI berdasarkan kondisi cuaca. Berperan sebagai Fullstack Developer untuk pengembangan sisi client dan server.",
+    "project-lazandra-title": "LAZANDRA",
+    "project-lazandra-desc":
+      "Aplikasi e-commerce full-stack dengan fitur penelusuran produk, pencarian, filter, wishlist, dan halaman detail produk. Dibuat dengan antarmuka responsif dan dioptimalkan untuk pengalaman pengguna yang nyaman. Berperan sebagai Fullstack Developer dalam pengembangan frontend dan backend.",
     "txt-29":
       "Di sini Anda akan menemukan beberapa proyek pribadi dan klien yang telah saya buat, masing-masing berisi studi kasusnya sendiri.",
     "txt-31": "BKK KARANGJATI",
@@ -333,6 +305,17 @@ const translations = {
     "nav-career": "CAREER",
     "nav-projects": "PROJECTS",
     "nav-contact": "CONTACT",
+    "nav-blog": 'BLOG <i class="fa fa-angle-down"></i>',
+    "blog-cart-index": "Cart Quantity Bug",
+    "blog-state-id": "State and Stable ID",
+    "blog-api-error": "Reading API Errors",
+    "blog-responsive": "Responsive UI Notes",
+    "blog-dark-mode": "Dark Mode Details",
+    "blog-clean-code": "Clean Code Habits",
+    "blog-auth": "Authentication Flow",
+    "blog-database": "Database Notes",
+    "blog-deploy": "Deployment Checklist",
+    "blog-debugging": "Debugging Mindset",
     "home-info":
       "A professional in administration and informatics with experience in data management and website development.",
     "home-btn": "CONTACT ME",
@@ -372,6 +355,17 @@ const translations = {
     "txt-28": "READ MORE",
     "projects-title": "PROJECTS",
     "cta-study": "CASE STUDY",
+    "project-read-more": "READ MORE",
+    "project-read-less": "SHOW LESS",
+    "project-fayda-title": "FAYDA STORE",
+    "project-fayda-desc":
+      "A full-stack e-commerce web application for food and beverage products with AI-powered search for text and images, cart management, and multiple payment methods. Features include real-time shipping cost calculation, secure authentication, and automated notifications. Acted as a Fullstack Developer, handling end-to-end development.",
+    "project-ternaqku-title": "TERNAQKU",
+    "project-ternaqku-desc":
+      "A web-based farm management system designed to help farmers monitor and manage livestock efficiently. Features include livestock data tracking such as age, breed, health status, location tracking using geolocation, and AI-based feed recommendations based on weather conditions. Acted as a Fullstack Developer, developing both client-side and server-side functionalities.",
+    "project-lazandra-title": "LAZANDRA",
+    "project-lazandra-desc":
+      "A full-stack e-commerce web application featuring product browsing, search, filtering, wishlist, and detailed product views. Designed with a responsive user interface and optimized for seamless user experience. Acted as a Fullstack Developer, handling both frontend and backend development.",
     "txt-29":
       "Here you will find some personal and client projects I have created, each containing its own case study.",
     "txt-30": "BKK KARANGJATI",

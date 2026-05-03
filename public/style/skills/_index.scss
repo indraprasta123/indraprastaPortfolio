@@ -206,6 +206,10 @@
   }
 }
 
+.skill-in-web-developer {
+  padding: 40px;
+}
+
 @media only screen and (max-width: 767.98px) {
   .skills {
     padding: 60px 20px 130px;
@@ -231,5 +235,9 @@
     .slick-dots li.slick-active button {
       width: 18px;
     }
+  }
+
+  .skill-in-web-developer {
+    padding: 20px;
   }
 }
