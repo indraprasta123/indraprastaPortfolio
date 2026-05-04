@@ -1606,6 +1606,31 @@ body.translate-mode {
   justify-content: space-between;
   gap: 20px;
 }
+.projects__content__tech-stack {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.projects__content__tech-stack-badge {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: #f7f9fa;
+  color: #222;
+  border-radius: 20px;
+  padding: 7px 16px 7px 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e0e0e0;
+  transition: background 0.2s;
+}
+.projects__content__tech-stack-badge img {
+  width: 20px;
+  object-fit: contain;
+  margin-right: 2px;
+}
 .projects__content__images {
   width: 100%;
   opacity: 0;
@@ -1693,6 +1718,7 @@ body.translate-mode {
   font-weight: bold;
   border-radius: 5px;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  margin-top: 30px;
   opacity: 0;
   transform: translateY(16px);
   transition: all 0.5s ease;
@@ -2190,6 +2216,18 @@ body.translate-mode {
 
 .skill-in-web-developer {
   padding: 40px;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: auto !important;
+}
+
+.slick-initialized .slick-slide {
+  display: flex !important;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -3120,6 +3158,10 @@ body.dark-mode .about__content__skills__card {
   transition: 0.1s ease;
 }
 body.dark-mode .about__content__skills__badge {
+  background: #1e293b;
+  box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .projects__content__tech-stack-badge {
   background: #1e293b;
   box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
 }

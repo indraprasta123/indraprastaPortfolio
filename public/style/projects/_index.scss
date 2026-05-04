@@ -47,6 +47,33 @@
       justify-content: space-between;
       gap: 20px;
     }
+
+    &__tech-stack {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__tech-stack-badge {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: #f7f9fa;
+      color: #222;
+      border-radius: 20px;
+      padding: 7px 16px 7px 10px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e0e0e0;
+      transition: background 0.2s;
+      img {
+        width: 20px;
+        object-fit: contain;
+        margin-right: 2px;
+      }
+    }
     &__images {
       width: 100%;
       opacity: 0;
@@ -133,6 +160,7 @@
         font-weight: bold;
         border-radius: 5px;
         box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+        margin-top: 30px;
         opacity: 0;
         transform: translateY(16px);
         transition: all 0.5s ease;
@@ -242,7 +270,6 @@
         display: block;
         width: 100%;
       }
-
     }
   }
 }

@@ -253,6 +253,10 @@ const translations = {
     "skill-network": "JARINGAN",
     "skill-operating": "OPERASI SISTEM",
     "skill-software-tools": "PERANGKAT LUNAK DAN ALAT",
+    other: "LAINNYA",
+    "skill-admin": "Administrasi",
+    teamwork: "Kerja Tim",
+    "problem-solving": "Penyelesaian Masalah",
   },
   en: {
     logo: "Indra Portfolio",
@@ -365,6 +369,10 @@ const translations = {
     "skill-network": "NETWORK",
     "skill-operating": "OPERATING SYSTEM",
     "skill-software-tools": "SOFTWARE AND TOOLS",
+    other: "OTHER",
+    "skill-admin": "Administration",
+    teamwork: "Team Work",
+    "problem-solving": "Problem Solving",
   },
 };
 
@@ -476,6 +484,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 $(".projects__content__slider1").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
+  adaptiveHeight: false,
   dots: true,
 });
 
