@@ -13,6 +13,7 @@ html {
 }
 
 p,
+span,
 label,
 a,
 button {
@@ -406,6 +407,7 @@ body.translate-mode {
 @media only screen and (max-width: 767.98px) {
   p,
   a,
+  span,
   label,
   button {
     font-size: 15px;
@@ -587,6 +589,7 @@ body.translate-mode {
 @media (max-width: 575.8px) {
   p,
   a,
+  span,
   label,
   button {
     font-size: 14px;
@@ -610,6 +613,7 @@ body.translate-mode {
 @media (max-width: 380.98px) {
   p,
   a,
+  span,
   label,
   button {
     font-size: 13px;
