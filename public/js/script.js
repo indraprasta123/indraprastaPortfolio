@@ -108,9 +108,7 @@ const loadingInterval = setInterval(() => {
   const target =
     ratio < 1
       ? Math.floor(ratio * maxBeforeLoad)
-      : Math.floor(
-          maxBeforeLoad + extraRatio * (softCap - maxBeforeLoad),
-        );
+      : Math.floor(maxBeforeLoad + extraRatio * (softCap - maxBeforeLoad));
 
   if (target > percent) {
     percent = target;
