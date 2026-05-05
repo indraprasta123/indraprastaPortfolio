@@ -38,8 +38,6 @@
     color: #222;
     border-radius: 20px;
     padding: 7px 16px 7px 10px;
-    font-size: 1rem;
-    font-weight: 500;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
     border: 1px solid #e0e0e0;
     transition: background 0.2s;
@@ -210,17 +208,6 @@
   padding: 40px;
 }
 
-.slick-track {
-  display: flex !important;
-}
-
-.slick-slide {
-  height: auto !important;
-}
-
-.slick-initialized .slick-slide {
-  display: flex !important;
-}
 
 @media only screen and (max-width: 767.98px) {
   .skills {

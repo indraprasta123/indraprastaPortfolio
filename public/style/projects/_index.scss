@@ -61,10 +61,8 @@
       gap: 2px;
       background: #f7f9fa;
       color: #222;
-      border-radius: 20px;
-      padding: 7px 16px 7px 10px;
-      font-size: 1rem;
-      font-weight: 500;
+      border-radius: 10px;
+      padding: 6px;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
       border: 1px solid #e0e0e0;
       transition: background 0.2s;
@@ -173,6 +171,12 @@
         }
       }
     }
+    &__cta-group {
+      display: flex;
+      gap: 10px;
+      text-align: center;
+      align-items: center;
+    }
     .slick-next {
       color: black;
       &::before {
@@ -227,10 +231,18 @@
 }
 
 @media only screen and (max-width: 767.98px) {
+  .slick-track {
+    display: block !important;
+  }
+
+  .slick-slide {
+    height: unset !important;
+  }
+
   .projects {
     padding: 60px 20px;
     &__content {
-      padding: 40px;
+      padding: 20px;
       margin-top: 10px;
       gap: 100px;
       &__sliderDekstop {
@@ -269,6 +281,12 @@
       .mobile {
         display: block;
         width: 100%;
+      }
+
+      &__tech-stack-badge {
+        img {
+          width: 15px;
+        }
       }
     }
   }

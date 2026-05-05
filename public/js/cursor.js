@@ -1,5 +1,7 @@
 (function () {
-  const finePointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const finePointerQuery = window.matchMedia(
+    "(hover: hover) and (pointer: fine)",
+  );
   const mobileWidthQuery = window.matchMedia("(max-width: 767.98px)");
 
   if (!finePointerQuery.matches || mobileWidthQuery.matches) {
@@ -94,7 +96,7 @@
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: #2eae7e;
+      background: #0069d9;
       box-shadow: 0 0 14px rgba(46, 174, 126, 0.9);
     }
 
@@ -175,7 +177,10 @@
     mouseX = event.clientX;
     mouseY = event.clientY;
     document.body.classList.add("cursor-ready");
-    document.body.classList.toggle("cursor-hover", Boolean(event.target.closest(interactiveSelector)));
+    document.body.classList.toggle(
+      "cursor-hover",
+      Boolean(event.target.closest(interactiveSelector)),
+    );
   });
 
   window.addEventListener("mousedown", () => {
@@ -187,7 +192,11 @@
   });
 
   window.addEventListener("mouseleave", () => {
-    document.body.classList.remove("cursor-ready", "cursor-hover", "cursor-down");
+    document.body.classList.remove(
+      "cursor-ready",
+      "cursor-hover",
+      "cursor-down",
+    );
   });
 
   window.addEventListener("mouseenter", () => {
@@ -199,7 +208,11 @@
       cursor.remove();
       dot.remove();
       style.remove();
-      document.body.classList.remove("cursor-ready", "cursor-hover", "cursor-down");
+      document.body.classList.remove(
+        "cursor-ready",
+        "cursor-hover",
+        "cursor-down",
+      );
     }
   }
 

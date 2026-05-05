@@ -13,6 +13,7 @@ html {
 }
 
 p,
+span,
 label,
 a,
 button {
@@ -380,6 +381,7 @@ body.translate-mode {
 @media only screen and (max-width: 767.98px) {
   p,
   a,
+  span,
   label,
   button {
     font-size: 15px;
@@ -573,6 +575,7 @@ body.translate-mode {
 @media (max-width: 575.8px) {
   p,
   a,
+  span,
   label,
   button {
     font-size: 14px;
@@ -593,6 +596,7 @@ body.translate-mode {
 @media (max-width: 380.98px) {
   p,
   a,
+  span,
   label,
   button {
     font-size: 13px;
@@ -1618,10 +1622,8 @@ body.translate-mode {
   gap: 2px;
   background: #f7f9fa;
   color: #222;
-  border-radius: 20px;
-  padding: 7px 16px 7px 10px;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: 10px;
+  padding: 6px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   border: 1px solid #e0e0e0;
   transition: background 0.2s;
@@ -1730,6 +1732,12 @@ body.translate-mode {
   transition-delay: 0.5s;
   transform: none;
 }
+.projects__content__cta-group {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
 .projects__content .slick-next {
   color: black;
 }
@@ -1778,11 +1786,17 @@ body.translate-mode {
 }
 
 @media only screen and (max-width: 767.98px) {
+  .slick-track {
+    display: block !important;
+  }
+  .slick-slide {
+    height: unset !important;
+  }
   .projects {
     padding: 60px 20px;
   }
   .projects__content {
-    padding: 40px;
+    padding: 20px;
     margin-top: 10px;
     gap: 100px;
   }
@@ -1822,6 +1836,9 @@ body.translate-mode {
   .projects__content .mobile {
     display: block;
     width: 100%;
+  }
+  .projects__content__tech-stack-badge img {
+    width: 15px;
   }
 }
 @media only screen and (max-width: 575.8px) {
@@ -2049,8 +2066,6 @@ body.translate-mode {
   color: #222;
   border-radius: 20px;
   padding: 7px 16px 7px 10px;
-  font-size: 1rem;
-  font-weight: 500;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   border: 1px solid #e0e0e0;
   transition: background 0.2s;
@@ -2216,18 +2231,6 @@ body.translate-mode {
 
 .skill-in-web-developer {
   padding: 40px;
-}
-
-.slick-track {
-  display: flex !important;
-}
-
-.slick-slide {
-  height: auto !important;
-}
-
-.slick-initialized .slick-slide {
-  display: flex !important;
 }
 
 @media only screen and (max-width: 767.98px) {
