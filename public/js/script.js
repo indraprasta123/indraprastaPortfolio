@@ -13,6 +13,13 @@ $(document).ready(function () {
       $(".head__menu__list").removeClass("animated");
     }
   });
+  $(".head__menu__link").click(function () {
+    if ($(".head").hasClass("close-menu")) {
+      $(".head").removeClass("close-menu");
+      $("body").removeClass("rm-scroll");
+      $(".head__menu__list").addClass("animation");
+    }
+  });
   $(".p-home").addClass("p-home--animation");
 });
 
