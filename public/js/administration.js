@@ -107,7 +107,14 @@ const loadingInterval = setInterval(() => {
   }
 }, 50);
 
+let hasFinishedLoading = false;
+
 const finishLoading = () => {
+  if (hasFinishedLoading) {
+    return;
+  }
+
+  hasFinishedLoading = true;
   clearInterval(loadingInterval);
 
   const finishInterval = setInterval(() => {
@@ -135,7 +142,18 @@ const finishLoading = () => {
   }, 16);
 };
 
-window.addEventListener("load", finishLoading);
+const maxWait = Math.max(estimatedDuration * 2, 9000);
+const fallbackTimer = setTimeout(finishLoading, maxWait);
+
+window.addEventListener("load", () => {
+  clearTimeout(fallbackTimer);
+  finishLoading();
+});
+
+if (document.readyState === "complete") {
+  clearTimeout(fallbackTimer);
+  finishLoading();
+}
 
 function initScrollAnimation() {
   const elementsHome = document.querySelectorAll(".animation");
