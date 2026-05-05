@@ -93,13 +93,24 @@ const updateLoadingUI = () => {
 };
 
 const maxBeforeLoad = 92;
+const softCap = 98;
+const extraDuration = 6000;
 const estimatedDuration = getEstimatedLoadDuration();
 const startTime = performance.now();
 
 const loadingInterval = setInterval(() => {
   const elapsed = performance.now() - startTime;
   const ratio = Math.min(elapsed / estimatedDuration, 1);
-  const target = Math.floor(ratio * maxBeforeLoad);
+  const extraRatio = Math.min(
+    Math.max((elapsed - estimatedDuration) / extraDuration, 0),
+    1,
+  );
+  const target =
+    ratio < 1
+      ? Math.floor(ratio * maxBeforeLoad)
+      : Math.floor(
+          maxBeforeLoad + extraRatio * (softCap - maxBeforeLoad),
+        );
 
   if (target > percent) {
     percent = target;
@@ -141,12 +152,20 @@ const finishLoading = () => {
   }, 16);
 };
 
-const maxWait = Math.max(estimatedDuration * 2, 9000);
+const maxWait = Math.max(estimatedDuration + extraDuration + 1500, 8000);
 const fallbackTimer = setTimeout(finishLoading, maxWait);
 
 window.addEventListener("load", () => {
   clearTimeout(fallbackTimer);
   finishLoading();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    if (!hasFinishedLoading) {
+      finishLoading();
+    }
+  }, 1500);
 });
 
 if (document.readyState === "complete") {
