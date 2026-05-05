@@ -1,24 +1,50 @@
 //ham-menu
 $(document).ready(function () {
-  $(".head").show();
-  $("#show-menu").click(function () {
-    if ($(".head").hasClass("close-menu")) {
-      $(".head").removeClass("close-menu");
-      $("body").removeClass("rm-scroll");
-      $(".head__menu__list").addClass("animation");
-    } else {
-      $("body").addClass("rm-scroll");
-      $(".head").addClass("close-menu");
-      $(".head__menu__list").removeClass("animation");
-      $(".head__menu__list").removeClass("animated");
+  const $head = $(".head");
+  const $menuList = $(".head__menu__list");
+
+  const openMenu = () => {
+    $("body").addClass("rm-scroll");
+    $head.removeClass("closing-menu").addClass("close-menu");
+    $menuList.addClass("animation");
+    requestAnimationFrame(() => {
+      $menuList.addClass("animated");
+    });
+  };
+
+  const closeMenu = () => {
+    if (!$head.hasClass("close-menu") || $head.hasClass("closing-menu")) {
+      return;
     }
+
+    $head.addClass("closing-menu");
+    $("body").removeClass("rm-scroll");
+    $menuList.removeClass("animated");
+
+    setTimeout(() => {
+      $head.removeClass("closing-menu close-menu");
+      $menuList.removeClass("animation");
+    }, 1600);
+  };
+
+  $head.show();
+  $("#show-menu").click(function () {
+    if ($head.hasClass("close-menu")) {
+      closeMenu();
+      return;
+    }
+
+    openMenu();
   });
   $(".head__menu__link").click(function () {
-    if ($(".head").hasClass("close-menu")) {
-      $(".head").removeClass("close-menu");
-      $("body").removeClass("rm-scroll");
-      $(".head__menu__list").addClass("animation");
+    if ($(this).hasClass("head__dropdown__toggle")) {
+      return;
     }
+
+    closeMenu();
+  });
+  $(".head__menu").on("click", ".head__dropdown__link", function () {
+    closeMenu();
   });
   $(".p-home").addClass("p-home--animation");
 });

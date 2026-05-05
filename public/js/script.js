@@ -1,24 +1,50 @@
 //ham-menu
 $(document).ready(function () {
-  $(".head").show();
-  $("#show-menu").click(function () {
-    if ($(".head").hasClass("close-menu")) {
-      $(".head").removeClass("close-menu");
-      $("body").removeClass("rm-scroll");
-      $(".head__menu__list").addClass("animation");
-    } else {
-      $("body").addClass("rm-scroll");
-      $(".head").addClass("close-menu");
-      $(".head__menu__list").removeClass("animation");
-      $(".head__menu__list").removeClass("animated");
+  const $head = $(".head");
+  const $menuList = $(".head__menu__list");
+
+  const openMenu = () => {
+    $("body").addClass("rm-scroll");
+    $head.removeClass("closing-menu").addClass("close-menu");
+    $menuList.addClass("animation");
+    requestAnimationFrame(() => {
+      $menuList.addClass("animated");
+    });
+  };
+
+  const closeMenu = () => {
+    if (!$head.hasClass("close-menu") || $head.hasClass("closing-menu")) {
+      return;
     }
+
+    $head.addClass("closing-menu");
+    $("body").removeClass("rm-scroll");
+    $menuList.removeClass("animated");
+
+    setTimeout(() => {
+      $head.removeClass("closing-menu close-menu");
+      $menuList.removeClass("animation");
+    }, 1600);
+  };
+
+  $head.show();
+  $("#show-menu").click(function () {
+    if ($head.hasClass("close-menu")) {
+      closeMenu();
+      return;
+    }
+
+    openMenu();
   });
   $(".head__menu__link").click(function () {
-    if ($(".head").hasClass("close-menu")) {
-      $(".head").removeClass("close-menu");
-      $("body").removeClass("rm-scroll");
-      $(".head__menu__list").addClass("animation");
+    if ($(this).hasClass("head__dropdown__toggle")) {
+      return;
     }
+
+    closeMenu();
+  });
+  $(".head__menu").on("click", ".head__dropdown__link", function () {
+    closeMenu();
   });
   $(".p-home").addClass("p-home--animation");
 });
@@ -280,14 +306,18 @@ const translations = {
     "open-cv": "BUKA",
     "unduh-cv": "UNDUH",
     "txt-1": "Kenali saya!",
+
     "txt-2":
-      "Saya lulusan Diploma Teknik Informatika dari <strong>Politeknik Sawunggalih Aji Purworejo (2025)</strong>, dengan pengalaman lebih dari tiga tahun sebagai <strong>Staf Administrasi</strong> di <strong>CV Wibawa Putra Utamajaya</strong>.",
+      "Saya adalah lulusan Diploma Teknik Informatika dari <strong>Politeknik Sawunggalih Aji Purworejo (2025)</strong>, serta lulusan bootcamp Fullstack Web Development dari <strong>Hacktiv8 (Mei 2026)</strong>.",
+
     "txt-6":
-      "Selama bekerja, saya bertanggung jawab dalam pengelolaan pengiriman barang, keuangan perusahaan, dan inventaris secara sistematis dan efisien. Selain memiliki kemampuan <strong>administratif</strong> yang kuat, saya juga memiliki keahlian teknis dalam <strong>pemrograman aplikasi web</strong>, termasuk penguasaan HTML, CSS, SCSS, JavaScript, dan PHP.",
+      "Saya berfokus pada pengembangan aplikasi web yang modern, responsif, dan mudah digunakan, dengan pengalaman membangun berbagai proyek seperti website bisnis, sistem restoran, dan portfolio pribadi.",
+
     "txt-9":
-      "Saya telah mengembangkan beberapa <strong>proyek web</strong>, termasuk situs sekolah, situs pribadi, situs bisnis, dan aplikasi restoran berbasis web, yang memperkuat kemampuan saya dalam merancang dan mengelola sistem berbasis web secara profesional.",
+      "Saya terbiasa dalam problem solving, mengelola data dinamis, serta membangun solusi berbasis web yang efisien dan terstruktur. Saya juga terus meningkatkan kemampuan dengan mempelajari teknologi baru dan mengerjakan proyek nyata.",
+
     "txt-11":
-      "Saya terbuka untuk <strong>kesempatan kerja</strong> di mana saya dapat berkontribusi, belajar, dan berkembang. Jika Anda memiliki peluang menarik yang sesuai dengan keterampilan dan pengalaman saya, jangan ragu untuk <strong>menghubungi</strong> saya.",
+      "Saya memiliki minat besar dalam mengembangkan produk digital yang scalable dan berdampak, serta terbuka terhadap peluang kerja untuk berkembang sebagai developer dan berkontribusi dalam proyek nyata.",
     "txt-14": "Keterampilan Saya",
     "txt-15": "Administrasi",
     "btn-contact": "KONTAK",
@@ -365,9 +395,9 @@ const translations = {
     "skill-network": "JARINGAN",
     "skill-operating": "OPERASI SISTEM",
     "skill-software-tools": "PERANGKAT LUNAK DAN ALAT",
-    other: "LAINNYA",
+    "other-s": "LAINNYA",
     "skill-admin": "Administrasi",
-    teamwork: "Kerja Tim",
+    "team-work": "Kerja Tim",
     "problem-solving": "Penyelesaian Masalah",
   },
   en: {
@@ -397,14 +427,18 @@ const translations = {
     "open-cv": "OPEN",
     "unduh-cv": "DOWNLOAD",
     "txt-1": "Get to know me!",
+
     "txt-2":
-      "I am a graduate of the Diploma in Informatics Engineering from <strong>Politeknik Sawunggalih Aji Purworejo (2025)</strong>, with more than three years of experience as an <strong>Administrative Staff</strong> at <strong>CV Wibawa Putra Utamajaya</strong>.",
+      "I am a graduate of Diploma in Informatics Engineering from <strong>Politeknik Sawunggalih Aji Purworejo (2025)</strong>, and a Fullstack Web Development bootcamp graduate from <strong>Hacktiv8 (May 2026)</strong>.",
+
     "txt-6":
-      "During my work, I was responsible for managing goods delivery, company finances, and inventory in a systematic and efficient manner. In addition to having strong <strong>administrative</strong> skills, I also possess technical expertise in <strong>web application programming</strong>, including proficiency in HTML, CSS, SCSS, JavaScript, and PHP.",
+      "I focus on building modern, responsive, and user-friendly web applications, with experience developing projects such as business websites, restaurant systems, and personal portfolios.",
+
     "txt-9":
-      "I have developed several <strong>web projects</strong>, including school websites, personal websites, business websites, and restaurant web applications, which have strengthened my ability to design and manage web-based systems professionally.",
+      "I am familiar with problem-solving, working with dynamic data, and creating efficient and well-structured web-based solutions. I continuously improve my skills by learning new technologies and building real-world projects.",
+
     "txt-11":
-      "I am open to <strong>job opportunities</strong> where I can contribute, learn, and grow. If you have a great opportunity that matches my skills and experience, please don’t hesitate to <strong>contact</strong> me.",
+      "I am passionate about creating scalable and impactful digital products, and I am open to opportunities where I can grow as a developer and contribute to meaningful projects.",
     "txt-14": "My Skill",
     "txt-15": "Administration",
     "btn-contact": "CONTACT",
@@ -481,9 +515,9 @@ const translations = {
     "skill-network": "NETWORK",
     "skill-operating": "OPERATING SYSTEM",
     "skill-software-tools": "SOFTWARE AND TOOLS",
-    other: "OTHER",
+    "other-s": "OTHER",
     "skill-admin": "Administration",
-    teamwork: "Team Work",
+    "team-work": "Team Work",
     "problem-solving": "Problem Solving",
   },
 };
