@@ -35,36 +35,106 @@ var swiper = new Swiper(".swiper-container.box", {
 //animasi scrool
 document.body.classList.add("loading");
 
-window.addEventListener("load", () => {
-  let percent = 0;
-  const circle = document.querySelector(".progress");
-  const text = document.getElementById("percent");
-  const loading = document.getElementById("loading");
+const getEstimatedLoadDuration = () => {
+  const connection =
+    navigator.connection ||
+    navigator.mozConnection ||
+    navigator.webkitConnection;
 
-  const radius = 70;
-  const circumference = 2 * Math.PI * radius;
+  if (!connection) {
+    return 1800;
+  }
+
+  if (typeof connection.downlink === "number") {
+    const downlink = connection.downlink;
+
+    if (downlink >= 10) return 1200;
+    if (downlink >= 5) return 1600;
+    if (downlink >= 2) return 2200;
+    if (downlink >= 1) return 3000;
+
+    return 4200;
+  }
+
+  switch (connection.effectiveType) {
+    case "slow-2g":
+      return 6000;
+    case "2g":
+      return 4500;
+    case "3g":
+      return 3000;
+    case "4g":
+      return 1800;
+    default:
+      return 1800;
+  }
+};
+
+const circle = document.querySelector(".progress");
+const text = document.getElementById("percent");
+const loading = document.getElementById("loading");
+let percent = 0;
+
+const radius = 70;
+const circumference = 2 * Math.PI * radius;
+
+if (circle) {
   circle.style.strokeDasharray = circumference;
+}
 
-  const interval = setInterval(() => {
-    percent++;
-    const offset = circumference - (percent / 100) * circumference;
-    circle.style.strokeDashoffset = offset;
-    text.textContent = percent + "%";
+const updateLoadingUI = () => {
+  if (!circle || !text) {
+    return;
+  }
+
+  const offset = circumference - (percent / 100) * circumference;
+  circle.style.strokeDashoffset = offset;
+  text.textContent = percent + "%";
+};
+
+const maxBeforeLoad = 92;
+const estimatedDuration = getEstimatedLoadDuration();
+const startTime = performance.now();
+
+const loadingInterval = setInterval(() => {
+  const elapsed = performance.now() - startTime;
+  const ratio = Math.min(elapsed / estimatedDuration, 1);
+  const target = Math.floor(ratio * maxBeforeLoad);
+
+  if (target > percent) {
+    percent = target;
+    updateLoadingUI();
+  }
+}, 50);
+
+const finishLoading = () => {
+  clearInterval(loadingInterval);
+
+  const finishInterval = setInterval(() => {
+    percent = Math.min(percent + 3, 100);
+    updateLoadingUI();
 
     if (percent >= 100) {
-      clearInterval(interval);
+      clearInterval(finishInterval);
 
-      loading.classList.add("hide");
+      if (loading) {
+        loading.classList.add("hide");
+      }
+
       document.body.classList.remove("loading");
 
       setTimeout(() => {
-        loading.style.display = "none";
+        if (loading) {
+          loading.style.display = "none";
+        }
 
         initScrollAnimation();
       }, 600);
     }
-  }, 25);
-});
+  }, 16);
+};
+
+window.addEventListener("load", finishLoading);
 
 function initScrollAnimation() {
   const elementsHome = document.querySelectorAll(".animation");
@@ -140,8 +210,7 @@ $(".skills__content__slider2").slick({
 
 const translateBtn = document.getElementById("translateBtn");
 const modeBtn = document.getElementById("modeBtn");
-let currentLang = "en"; 
-
+let currentLang = "en";
 
 const translations = {
   id: {
