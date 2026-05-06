@@ -1,13 +1,8 @@
 .contact {
   position: relative;
-  background-image: var(--bg-images-light);
   background-size: cover;
   background-position: center;
   padding: 60px 40px;
-  &::before {
-    content: "";
-    display: none;
-  }
   &__title {
     text-align: center;
     position: relative;

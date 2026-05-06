@@ -428,6 +428,7 @@ const translations = {
     "title-certificates": "SERTIFIKAT",
     "txt-75":
       "Sertifikat Dukungan TI yang mencerminkan keterampilan dan pengalaman belajar saya di Kursus Aguna.",
+    "cert-view": "Lihat Sertifikat",
     "txt-linux": "Dasar Linux",
     "txt-network": "Dasar Jaringan",
     "txt-pnetlab": "Simulasi Jaringan dengan PNETLab",
@@ -582,6 +583,7 @@ const translations = {
     "title-certificates": "CERTIFICATES",
     "txt-75":
       "IT Support Certificate that reflects my skills and learning experience at Aguna Course.",
+    "cert-view": "View Certificate",
     "txt-linux": "Linux Fundamentals",
     "txt-network": "Network Fundamentals",
     "txt-pnetlab": "Network Simulation with PNETLab",

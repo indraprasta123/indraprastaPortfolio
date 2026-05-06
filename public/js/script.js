@@ -303,6 +303,36 @@ const translations = {
     "desc-about-title":
       "Di sini Anda akan menemukan informasi lebih lanjut tentang saya, apa yang saya lakukan, dan keterampilan saya saat ini, terutama dalam pemrograman dan administrasi.",
     "about-title": "TENTANG SAYA",
+    "title-certificates": "SERTIFIKAT",
+    "txt-75":
+      "Kumpulan sertifikasi yang mencerminkan pembelajaran dan pengembangan saya yang berkelanjutan dalam pengembangan web dan IT.",
+    "cert-view": "Lihat Sertifikat",
+    "cert-hacktiv8-title":
+      "Sertifikat Kelulusan — Fullstack JavaScript Immersive",
+    "cert-hacktiv8-date": "Mei 2026",
+    "cert-transcript-title": "Transkrip Akademik — Nilai Akhir 86% A",
+    "cert-transcript-date": "Mei 2026",
+    "cert-css-title": "Sertifikat CSS",
+    "cert-css-date": "April 2026",
+    "cert-js-title": "JavaScript Basic",
+    "cert-js-date": "April 2026",
+    "cert-problem-title": "Problem Solving Basic",
+    "cert-problem-date": "April 2026",
+    "cert-react-title": "React Basic",
+    "cert-react-date": "April 2026",
+    "cert-intern-title": "Software Engineer Intern",
+    "cert-intern-date": "April 2026",
+    "cert-mongo-title":
+      "MongoDB Schema Design Patterns and Anti-patterns Skill Badge",
+    "cert-mongo-date": "April 2026",
+    "cert-linux-title": "Linux Fundamentals",
+    "cert-linux-date": "June 2023",
+    "cert-network-title": "Network Fundamentals",
+    "cert-network-date": "June 2023",
+    "cert-pnetlab-title": "Network Simulation with PNETLab",
+    "cert-pnetlab-date": "June 2023",
+    "cert-virtual-title": "Virtual Machine Fundamentals",
+    "cert-virtual-date": "June 2023",
     "open-cv": "BUKA",
     "unduh-cv": "UNDUH",
     "txt-1": "Kenali saya!",
@@ -424,6 +454,36 @@ const translations = {
     "desc-about-title":
       "Here you will find more information about me, what I do, and my current skills, especially in programming and administration.",
     "about-title": "ABOUT ME",
+    "title-certificates": "CERTIFICATES",
+    "txt-75":
+      "A collection of certifications that reflect my continuous learning and development in web development and IT.",
+    "cert-view": "View Certificate",
+    "cert-hacktiv8-title":
+      "Certificate of Graduation — Fullstack JavaScript Immersive",
+    "cert-hacktiv8-date": "May 2026",
+    "cert-transcript-title": "Academic Transcript — Final Grade 86% A",
+    "cert-transcript-date": "May 2026",
+    "cert-css-title": "CSS Certificate",
+    "cert-css-date": "April 2026",
+    "cert-js-title": "JavaScript Basic",
+    "cert-js-date": "April 2026",
+    "cert-problem-title": "Problem Solving Basic",
+    "cert-problem-date": "April 2026",
+    "cert-react-title": "React Basic",
+    "cert-react-date": "April 2026",
+    "cert-intern-title": "Software Engineer Intern",
+    "cert-intern-date": "April 2026",
+    "cert-mongo-title":
+      "MongoDB Schema Design Patterns and Anti-patterns Skill Badge",
+    "cert-mongo-date": "April 2026",
+    "cert-linux-title": "Linux Fundamentals",
+    "cert-linux-date": "June 2023",
+    "cert-network-title": "Network Fundamentals",
+    "cert-network-date": "June 2023",
+    "cert-pnetlab-title": "Network Simulation with PNETLab",
+    "cert-pnetlab-date": "June 2023",
+    "cert-virtual-title": "Virtual Machine Fundamentals",
+    "cert-virtual-date": "June 2023",
     "open-cv": "OPEN",
     "unduh-cv": "DOWNLOAD",
     "txt-1": "Get to know me!",
@@ -640,3 +700,28 @@ $(".projects__content__slider2").slick({
   slidesToScroll: 1,
   dots: true,
 });
+
+// Certificate modal handlers (used by index.html)
+function openPDF(pdfUrl) {
+  const modal = document.getElementById("modal");
+  const viewer = document.getElementById("pdfViewer");
+
+  if (!modal || !viewer) {
+    return;
+  }
+
+  modal.style.display = "flex";
+  viewer.src = pdfUrl;
+}
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  const viewer = document.getElementById("pdfViewer");
+
+  if (!modal || !viewer) {
+    return;
+  }
+
+  modal.style.display = "none";
+  viewer.src = "";
+}

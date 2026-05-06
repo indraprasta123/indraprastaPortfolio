@@ -291,19 +291,6 @@ body.dark-mode {
     background: #1e293b;
   }
 
-  .contact {
-    background-image: var(--bg-images-dark);
-  }
-
-  .contact::before {
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgb(0 0 0 / 76%);
-    inset: 0;
-  }
-
   .contact__content__form {
     background: #1e293b;
     box-shadow: 0 -4px 12px rgba(255, 255, 255, 0.1);
