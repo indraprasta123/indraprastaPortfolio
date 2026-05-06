@@ -1678,6 +1678,62 @@ body.translate-mode {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   border: 1px solid #e0e0e0;
   transition: background 0.2s;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 1s ease;
+  transition-delay: 0s;
+}
+.animated .projects__content__tech-stack-badge {
+  opacity: 1;
+  transform: none;
+}
+.animated .projects__content__tech-stack-badge:nth-child(1) {
+  transition-delay: 340ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(2) {
+  transition-delay: 440ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(3) {
+  transition-delay: 540ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(4) {
+  transition-delay: 640ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(5) {
+  transition-delay: 740ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(6) {
+  transition-delay: 840ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(7) {
+  transition-delay: 940ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(8) {
+  transition-delay: 1040ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(9) {
+  transition-delay: 1140ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(10) {
+  transition-delay: 1240ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(11) {
+  transition-delay: 1340ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(12) {
+  transition-delay: 1440ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(13) {
+  transition-delay: 1540ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(14) {
+  transition-delay: 1640ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(15) {
+  transition-delay: 1740ms;
+}
+.animated .projects__content__tech-stack-badge:nth-child(16) {
+  transition-delay: 1840ms;
 }
 .projects__content__tech-stack-badge img {
   width: 20px;
@@ -1780,7 +1836,7 @@ body.translate-mode {
 .animated .projects__content__right-side a {
   opacity: 1;
   transition: all 0.4s ease-out;
-  transition-delay: 0.5s;
+  transition-delay: 1.3s;
   transform: none;
 }
 .projects__content__cta-group {
@@ -2115,6 +2171,62 @@ body.translate-mode {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   border: 1px solid #e0e0e0;
   transition: background 0.2s;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 1s ease;
+  transition-delay: 0s;
+}
+.animated .skills__badge {
+  opacity: 1;
+  transform: none;
+}
+.animated .skills__badge:nth-child(1) {
+  transition-delay: 340ms;
+}
+.animated .skills__badge:nth-child(2) {
+  transition-delay: 440ms;
+}
+.animated .skills__badge:nth-child(3) {
+  transition-delay: 540ms;
+}
+.animated .skills__badge:nth-child(4) {
+  transition-delay: 640ms;
+}
+.animated .skills__badge:nth-child(5) {
+  transition-delay: 740ms;
+}
+.animated .skills__badge:nth-child(6) {
+  transition-delay: 840ms;
+}
+.animated .skills__badge:nth-child(7) {
+  transition-delay: 940ms;
+}
+.animated .skills__badge:nth-child(8) {
+  transition-delay: 1040ms;
+}
+.animated .skills__badge:nth-child(9) {
+  transition-delay: 1140ms;
+}
+.animated .skills__badge:nth-child(10) {
+  transition-delay: 1240ms;
+}
+.animated .skills__badge:nth-child(11) {
+  transition-delay: 1340ms;
+}
+.animated .skills__badge:nth-child(12) {
+  transition-delay: 1440ms;
+}
+.animated .skills__badge:nth-child(13) {
+  transition-delay: 1540ms;
+}
+.animated .skills__badge:nth-child(14) {
+  transition-delay: 1640ms;
+}
+.animated .skills__badge:nth-child(15) {
+  transition-delay: 1740ms;
+}
+.animated .skills__badge:nth-child(16) {
+  transition-delay: 1840ms;
 }
 .skills__badge img {
   width: 22px;
